@@ -250,7 +250,7 @@ ul#nav li.current a { color: #F06000; }
 
 #resume section2 {
    position: relative;
-   right: -50px;
+   right: -20px;
 }
 
 #resume h1 {
@@ -278,6 +278,39 @@ ul#nav li.current a { color: #F06000; }
    color:#272525
 }
 
+#resume p2 {
+   position: relative;
+   right: -20px;
+   background: #fff;
+   font-family: "opensans-regular", sans-serif;
+   font-weight: normal;
+   font-size: 15px;
+   line-height: 30px;
+   color: #575757;
+}
+
+#resume p3 {
+   position: relative;
+   right: -20px;
+   font-family: "opensans-regular", sans-serif;
+   font-weight: normal;
+   font-size: 15px;
+   line-height: 20px;
+   color: #000000;
+}
+
+#resume p3 span {
+   color: black;
+}
+
+#resume ul {
+   color:black;
+   line-height: 15px;
+}
+
+#resume span2 {
+   color: black;
+}
 
 #resume .header-col { padding-top: 9px; }
 #resume .main-col { padding-right: 10%; }
@@ -298,7 +331,7 @@ ul#nav li.current a { color: #F06000; }
    margin-left: 5px;
 }
 #resume .date {
-   font: 15px/24px 'librebaskerville', serif;
+   font: 16px/24px 'librebaskerville', serif;
    margin-top: 6px;
 }
 
