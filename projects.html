@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 
+<html lang="en">
 <head>
     <!--- Basic Page Needs -->
     <meta charset="utf-8">
@@ -13,15 +14,23 @@
     <link rel="stylesheet" href="css/layoutProjects.css">
     <link rel="stylesheet" href="css/media-queries.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
-
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    
     <!---Script -->
     <script src="js/modernizr.js"></script>
+    
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 </head>
 
 <body>
     <!--Header -->
-    <header id="home">
+    <header id="project-header">
 
         <nav id="nav-wrap">
 
@@ -32,9 +41,128 @@
                 <li class="current"><a href="index.html">Home</a></li>
             </ul> <!-- end #nav -->
 
-
+            
         </nav> <!-- end #nav-wrap -->
 
     </header>
+    
+    <section id="projects">
+        <div class="container-fluid">
+            <div class="jumbotron text-center bg-primary">
+                <h1>Projects</h1>
+            </div>
+        </div>
 
+        <div class="panel panel-default center-block" style="width: 50%">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h2>
+                        CPU Design
+                    </h2>
+                </div>
+                <div class="col-lg-4 text-center">
+                    I Designed a super sick CPU.
+                </div>
+                <div class="col-lg-4">
+                
+                </div>
+
+                <div class="col-lg-12">
+                    <button data-toggle="collapse" data-target="#yogaPose">
+                        Show More
+                    </button>
+                    <div id="yogaPose" class="panel collapse">
+                        <p>
+                            The goal of this project was to design and implement a 3-stage pipelined Central Processing Unit (CPU) using the
+                            RISC-V
+                            ISA programmed in Verilog to run on a Zynq 7000-series FPGA. In addition to having a processor that could run
+                            the base
+                            RV32 instruction set, there had to also be separate modules in the datapath for handling input/output (IO) to
+                            transmit
+                            and receive data. An on-chip Universial Asynchronous Reciever-Transmitter (UART) using the technique of Memory
+                            Mapped IO
+                            (MMIO) was to be implemented to send and receive bytes using RISC-V load and store instructions. This interface
+                            would
+                            then allow the CPU to store the user’s instructions into BIOS memory which could then be read on the following
+                            cycle
+                            instead of reading from Instruction Memory (IMEM).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default center-block" style="width: 50%">
+            <div class="row">
+                <div class="col-lg-4 text-center">
+                    <h2>
+                        Yoga Pose Correction
+                    </h2>
+                    
+                </div>
+                <div class="col-lg-4 text-center">
+                    Built a sweet yoga pose robot.
+                </div>
+                <div class="col-lg-4">
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default center-block" style="width: 50%">
+            <div class="row">
+                <div class="col-lg-4 text-center">
+                    <h2>
+                        Gitlet
+                    </h2>
+                </div>
+                <div class="col-lg-4 text-center">
+                    Designed a version control system mimicking the basic features of Git.
+                </div>
+                <div class="col-lg-4">
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default center-block" style="width: 50%">
+            <div class="row">
+                <div class="col-lg-4 text-center">
+                    <h2>
+                        Robot Crawler
+                    </h2>
+                </div>
+                <div class="col-lg-4 text-center">
+                    Implemented different versions of value iteration and Q-learning based on the Bellman Ford Algorithm to
+                    train a robot crawler and Pacman.
+                </div>
+                <div class="col-lg-4">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer
+        ================================================== -->
+    <!-- <footer>
+    
+        <div class="row">
+    
+            <div class="twelve columns">
+    
+                <ul class="social-links">
+                    <li><a href="https://www.linkedin.com/in/yousef-alshinnawi/" target="_blank"><i
+                                class="fa fa-linkedin"></i></a></li>
+                    <li><a href="https://github.com/yalshinnawi" target="_blank"> <i class="fa fa-github"></i></a></li>
+                </ul>
+            </div>
+    
+            <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
+    
+        </div>
+    
+    </footer>  -->
+    <!-- Footer End-->
 </body>
+</html>
