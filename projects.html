@@ -54,24 +54,12 @@
         </div>
 
         <div class="panel panel-default center-block" style="width: 50%">
-            <div class="row">
-                <div class="col-lg-4">
-                    <h2>
-                        CPU Design
-                    </h2>
-                </div>
-                <div class="col-lg-4 text-center">
-                    I Designed a super sick CPU.
-                </div>
-                <div class="col-lg-4">
-                
-                </div>
-
-                <div class="col-lg-12">
-                    <button data-toggle="collapse" data-target="#yogaPose">
-                        Show More
-                    </button>
-                    <div id="yogaPose" class="panel collapse">
+            <div class="panel-heading text-center">
+                CPU Design
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-6">
                         <p>
                             The goal of this project was to design and implement a 3-stage pipelined Central Processing Unit (CPU) using the
                             RISC-V
@@ -86,6 +74,85 @@
                             then allow the CPU to store the user’s instructions into BIOS memory which could then be read on the following
                             cycle
                             instead of reading from Instruction Memory (IMEM).
+                        </p>
+                    </div>
+                    <div class="col-lg-6" style="text-align: center;">
+                        <img src="images/EECS151L Final Project High-level Overview of System.png" alt="">
+                        <figcaption>
+                            CPU High Level Overview
+                        </figcaption>
+                    </div>
+                </div>
+            </div>
+            <button data-toggle="collapse" data-target="#cpuDesign">
+                Show More
+            </button>
+            <div id="cpuDesign" class="panel collapse">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p>
+                            The processor was divided into 3 sections, the Instruction Fetch Stage (IF Stage), Instruction Decode and Execute Stage
+                            (IDEX Stage), and Memory Write Back Stage (MEMWB Stage). In the IF Stage, new instructions are loaded from either the
+                            IMEM or BIOS which are then decoded and passed through the Register File (RegFile) to load data for the IDEX Stage. The
+                            IDEX Stage then passes this data through combinational submodules such as the Arithmetic Logic Unit (ALU) or Branch
+                            Comparator to compute the logic of the current instruction. Output from this stage is saved to the IMEM and Data Memory
+                            (DMEM) which is then passed through to the MEMWB Stage. Following this, the MEMWB Stage handles what data is to be
+                            written back to the RegFile for the current instruction.
+                        </p>
+                    </div>
+                </div>
+                <div class="row" style="text-align: center;">
+                    <div class="col-lg-4">
+                        <img src="images/EECS151DataPath-IF Stage.jpg" alt="">
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="images/EECS151DataPath-IDEX Stage.jpg" alt="">
+                    </div>
+                    
+                    <div class="col-lg-4">
+                        <img src="images/EECS151DataPath-MEMWB Stage.jpg" alt="">
+                    </div>
+                </div>
+                <div class="row" style="text-align: center;"> 
+                    <div class="col-lg-4">
+                        IF Stage
+                    </div>
+                    <div class="col-lg-4">
+                        IDEX Stage
+                    </div>
+                    <div class="col-lg-4">
+                        MEMWB Stage
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p>
+                            <span>
+                                In terms of the original goal, the CPU checked all the marks. The entire datapath was implemented with a 3-stage
+                                pipeline that could send and receive data through the UART MMIO interface. Through this interface, the CPU was able to
+                                interact with on-board buttons, switches, LEDS, and the audio output with the Subtractive Synthesizer.
+                            </span><br>
+
+                            <span>
+                                By the final checkpoint, the processor was able to reach a clock speed of ~70MHz. The max path delay turned out to be in
+                                the IDEX Stage of the 3-stage pipeline. Specifically the delay was between the initial instruction input to the IDEX
+                                Stage to the Synthesizer block at the end of this stage. It is speculated that this delay occurs because of the need for
+                                signed multiplication and buffer that exists in the PWM block for delivering audio to the on-board audio port.
+                                Multiplication is a very intensive process and the current method used in this design is not optimal.
+                            </span><br>
+
+                            <span>
+                                Additionally, it is important to mention that before implementing the NCO, PWM and Synthesizer, the critical path
+                                instead existed between the MEMWB stage and IDEX stage during forwarding. In the previous design we had reached a final
+                                clock speed of ~76MHz. It is believed that this critical path existed because of the need for the RegFile return address
+                                and write enable from 2 cycles ago.
+                            </span><br>
+
+                            <span>
+                                For both designs, the CPI of the mmult program was ~1.18 most likely due to the design’s scheme of handling jumps and
+                                branch instructions by simply adding a NOP to the next cycle. The minimum clock period for the final design was 0.214s
+                                for the mmult program, the number of Slice LUTs used was 2,283, and the number of Slice Registers used was 905.
+                            </span>
                         </p>
                     </div>
                 </div>

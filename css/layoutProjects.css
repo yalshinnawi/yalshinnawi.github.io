@@ -156,6 +156,10 @@ ul#nav li.current a { color: #F06000; }
    text-align: center;
 }
 
+#projects img-container {
+   text-align: center;
+   display: block;
+}
 /* ------------------------------------------------------------------ */
 /* i. Footer
 /* ------------------------------------------------------------------ */
