@@ -160,18 +160,141 @@
         </div>
 
         <div class="panel panel-default center-block" style="width: 50%">
-            <div class="row">
-                <div class="col-lg-4 text-center">
-                    <h2>
-                        Yoga Pose Correction
-                    </h2>
-                    
+            <div class="panel-heading text-center">
+                Yoga Pose Correction
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-6" style="text-align: center;">
+                        <img src="images/RoboticsCoverPic.png" alt="">
+                        <figcaption>
+                            Baxter Robot and the HumanBot Model
+                        </figcaption>
+                    </div>
+                    <div class="col-lg-6">
+                        <p>
+                            <span>
+                                This project was inspired by real world challenges that have been caused by the COVID-19 pandemic. Because of social
+                                distancing precautions people are unable to participate in typical yoga classes. Yoga instructors often have to put
+                                their hands on their students in order to help them with their poses.
+                            </span><br>
+                            
+                            <span>
+                                This project attempts to use the popular Rethink Robotics robot Baxter as a makeshift yoga instructor. The goal of this
+                                project is to correct a person's pose. Baxter reaches out and nudges the person's arms from their original position into
+                                the desired one, attempting to mimic what an instructor would do.
+                            </span><br>
+
+                            <span>
+                                The overall goal of the project was to correct a person's body position using Baxter. More specifically, in our initial
+                                project proposal we planned to move someone’s arms into the YMCA poses, but after we began to work through the project
+                                we had to tone this down quite a bit. As a result, our goal turned into just getting Baxter to move someone’s arms into
+                                a T-Pose position as shown in the figure.
+                            </span><br>
+
+                            <span>
+                                Because of the COVID-19 pandemic all of this work was completed using Gazebo simulation software to model Baxter and the
+                                human participant.
+                            </span>
+                        </p>
+                    </div>
                 </div>
-                <div class="col-lg-4 text-center">
-                    Built a sweet yoga pose robot.
+            </div>
+            <button data-toggle="collapse" data-target="#yogaPose">
+                Show More
+            </button>
+            <div id="yogaPose" class="panel collapse">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p>
+                            In order to accomplish our project goals this really required two main components: the mannequin's pose and a plan to
+                            move the mannequin’s arms. To acquire the mannequin's pose, we used Baxter's head camera and arUco markers. We chose to
+                            use arUco tags because they make it possible to get the three dimensional position of the tag using only one camera.
+                            They are also fairly well documented and there are libraries available to detect arUco markers. While arUco tags may be
+                            a bit cumbersome for a user in a real life scenario they offer a simple and well tested solution for defining the
+                            location of objects in 3D space using just one camera. In future iterations it may make sense to use a RealSense camera
+                            or IMUs for pose estimation.
+                            Each aspect of the simulation/project design is further discussed below in the Project Details section.
+                        </p>
+                    </div>
                 </div>
-                <div class="col-lg-4">
-                    
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h2>
+                            ArUco Tags
+                        </h2>
+                        <p>
+                            There are several ways to get the pose of a person. Kinect, IMUs, or other sensors might work. We decided to use arUco
+                            tags from the OpenCV library. These are pre-defined tags that allow a single camera to find the frame of the tag
+                            relative to the camera in 3D space. Luckily enough there is already a ROS package for detecting arUco tags. In this
+                            design we ended up using the aruco_detect package. By subscribing to the fiducial_transforms topic published by the
+                            aruco_detect package, we were able to get the frame of the arUco tag on the mannequin's arm in the head_camera frame.
+                            This pose was then transformed to the base frame using a tf_buffer.
+                        </p>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <img src="images/roboticsArucoTagPic.webp" alt="">
+                        <figcaption>
+                            ArUco Tag Detection
+                        </figcaption>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="images/MannequinPic.jpg" alt="">
+                        <figcaption>
+                            Mannequin Spawn
+                        </figcaption>
+                    </div>
+                
+                    <div class="col-lg-6">
+                        <h2>
+                            HumanBot - Spawning the Mannequin
+                        </h2>
+                        <p>
+                            HumanBot is the name that we gave the mannequin. HumanBot is defined by a urdf.xacro file. This file defines his links,
+                            joints, and physics.
+                            
+                            HumanBot’s arms defined to move up and down so that they can be relocated by Baxter. Additionally, as can be seen in the
+                            picture to the right, there are two arUco tags on the mannequin's arms. These are modeled as fixed joints onto the arm
+                            and allow the head_camera to detect the arm.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h2>
+                            Motion Planning with Baxter
+                        </h2>
+                        <p>
+                            Finally, with this new pose from the aruco_detect package we were able to use the MoveIt package to handle the path
+                            planning and collision detection. The ultimate reason for using MoveIt instead of simply using an Inverse Kinematics
+                            solver was because initially we had planned to add resistance to HumanBot's arm and the path planner would allow for
+                            a
+                            sense of control as the robot continues to move the arms.
+                        </p>
+                    </div>
+                
+                    <div class="col-lg-6">
+                        <img src="images/roboticsMotionPlanning.webp" alt="">
+                        <figcaption>
+                            Baxter and HumanBot
+                        </figcaption>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div style="text-align: center;">
+                            <video id="roboticsVideo" width="900" height="900">
+                                <source src="videos/RoboticsDemo.mp4" type="video/mp4">
+                                Your browser does not support HTML video.
+                            </video>
+                            <button onclick="playPause()">
+                                Play/Pause
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -231,5 +354,15 @@
     
     </footer>  -->
     <!-- Footer End-->
+    <script>
+        var myVideo = document.getElementById("roboticsVideo")
+
+        function playPause() {
+            if (myVideo.paused)
+                myVideo.play();
+            else
+                myVideo.pause();
+        }
+    </script>
 </body>
 </html>
