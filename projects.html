@@ -285,8 +285,26 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
+                        <p>
+                            <h2>Results & Video Demo</h2>
+                            <p>
+                                <span>
+                                    In the end we were able to successfully use Baxter to move the HumanBot’s arms. However, there are many improvements to
+                                    be made as mentioned at the end of the Design section. The final product used manual inputs to move the HumanBot’s arms,
+                                    but we were able to find the exact location of the aruco_tag as shown in the next section
+                                </span><br>
+
+                                <span>
+                                    In the video, it first shows in RVIZ how Baxter’s head_camera can target and get the pose of an aruco tag. This is shown
+                                    in the bottom left corner of the screen. Using the pose of the tag, Baxter can then plan his movement to the HumanBot
+                                    and in the case of this demonstration, Baxter lifts HumanBot's arm into a T-Pose position. After the movement is
+                                    finished, the pose of the aruco_tag, shown in RVIZ defined in the world frame of Gazebo, is shown to have the same pose
+                                    as the calculated pose in the terminal.
+                                </span><br>
+                            </p>
+                        </p>
                         <div style="text-align: center;">
-                            <video id="roboticsVideo" width="900" height="900">
+                            <video id="roboticsVideo" width="900" height="500">
                                 <source src="videos/RoboticsDemo.mp4" type="video/mp4">
                                 Your browser does not support HTML video.
                             </video>
@@ -300,34 +318,152 @@
         </div>
 
         <div class="panel panel-default center-block" style="width: 50%">
-            <div class="row">
-                <div class="col-lg-4 text-center">
-                    <h2>
-                        Gitlet
-                    </h2>
+            <div class="panel-heading text-center">
+                Gitlet
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p>
+                            <span>
+                                With the inspiration of the popular system Git, I created a smaller and simpler version-control system named Gitlet in CS61B at UC Berkeley. A version-control system is a backup system for collections of files. The main functionality that Gitlet supports is:
+                                <ol>
+                                    <li>Saving the contents of entire directories of files.</li>
+                                    <li>Restoring a version of one or more files or entire commits.</li>
+                                    <li>Viewing the history of your backups via a log.</li>
+                                    <li>Maintaining related sequences of commits, called branches.</li>
+                                    <li>Merging changes in one branch into another.</li>
+                                </ol>
+                            </span>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <img src="images/gitletCoverPhoto.png" alt="">
+                        Image Credit: <a href="https://medium.com/@gohberg/the-biggest-misconception-about-git-b2f87d97ed52">Biggest Misconception About Git</a>
+                    </div>
                 </div>
-                <div class="col-lg-4 text-center">
-                    Designed a version control system mimicking the basic features of Git.
+                <button data-toggle="collapse" data-target="#gitletTab">
+                    Show More
+                </button>
+                <div id="gitletTab" class="panel collapse">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <p>
+                                <span>
+                                    The purpose of a version-control system is to help save different versions of your project periodically so that you can
+                                    go back to previous versions if you mess something up. This control system also allows others to push their own versions
+                                    onto the control-system so that one can collaborate on a project without discarding previous work or modifying it, you
+                                    would instead create a new version.
+                                </span><br>
+                                <span>
+                                    In this project I implemented the following git features: <mark>init</mark>, <mark>add</mark>,
+                                    <mark>commit</mark>, <mark>rm</mark>, <mark>log</mark>, <mark>global-log</mark>, <mark>find</mark>, <mark>status</mark>, <mark>checkout</mark>, <mark>branch</mark>, <mark>rm-branch</mark>, <mark>reset</mark>, and <mark>merge</mark>.
+                                </span>
+                                <span>
+                                    To mimick the tree-like structure of commits that git uses, gitlet used different kinds of objects:
+                                    <ul>
+                                        <li> <b>blobs</b>: contents of the files, serving as different versions of a document or project.</li>
+                                        <li> <b>trees</b>: data structure made of commit objects that connect to each other through their respective parent commits.</li>
+                                        <li> <b>commits</b>: combinations of log messages, a reference to a tree, references to different blobs, references to parent commits, and other metadata (commit date, author, commit message, and the commit ID)</li>
+                                    </ul>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <p>
+                                Each blob and commit has a unique integer ID that is created using the same cryptographic hash function SHA-1 (Secure
+                                Hash 1) that Git uses. The tree structures are made of commits and these commits reference different blobs which
+                                represent versions of the files that the user has. An example of this structure is shown below, where the commit
+                                contains the references to the blobs, parent link, the date the commit was made, and version names. The blob contains
+                                the data of each file, and both the commits and blobs have their own unique SHA-1 hash value. Image Credit: <a href="https://inst.eecs.berkeley.edu/~cs61b/fa19/materials/proj/proj3/" target="_blank">UC Berkeley CS61B Fall, 2019</a>
+                            </p>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <img src="images/gitletCommitsAndBlobs.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <p>
+                                Much like Git, gitlet is initialized first using init, creating a .gitlet file that contains the head commit which can then be used to branch off and create different versions by adding new files and commiting, or by creating a new branch which will detach from the master branch. This project was a great experience, and really made it easier to understand what Git can really do.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-4">
-                    
-                </div>
+
+            
             </div>
         </div>
 
         <div class="panel panel-default center-block" style="width: 50%">
-            <div class="row">
-                <div class="col-lg-4 text-center">
-                    <h2>
-                        Robot Crawler
-                    </h2>
-                </div>
-                <div class="col-lg-4 text-center">
-                    Implemented different versions of value iteration and Q-learning based on the Bellman Ford Algorithm to
-                    train a robot crawler and Pacman.
-                </div>
-                <div class="col-lg-4">
+            <div class="panel-heading text-center">
+                NumC
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="images/NumC.png" alt="">
 
+                        Image Credit: <a href="https://commons.wikimedia.org/wiki/File:NumPy_logo.svg" target="_blank">NumPy logo </a>
+                        
+                    </div>
+                        
+                    <div class="col-lg-6">
+                        <p>
+                            In this project I implemented a slower version of numpy, called numc in the programming language C. Although the matrix multiplication and power operations are not as fast as numpy, they are still much better than the naive implementations via parallel programming using OpenMP and SIMD. This was a very difficult project, and required a lot of thought to get to the required speedup.
+                        </p>
+                    </div>
+                </div>
+
+                <button data-toggle="collapse" data-target="#numcTab">
+                    Show More
+                </button>
+                <div id="numcTab" class="panel collapse">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <p>
+                                <span>
+                                    To recreate the functionality of NumPy, the first task was to build a struct in C that could work like matrices do in
+                                    NumPy. Specifically this meant that I had to create functions that could properly take slices from arrays. As easy as
+                                    this sounds, it became quite complicated because of the properties of allocation and deallocation of memory in C. For
+                                    instance, if a slice of a matrix was to be deallocated, that did not mean we should lose reference to the parent matrix.
+                                </span><br>
+
+                                <span>
+                                    Once the matrix structure was properly created, the Python-C interface was then tackled. To work like numPy, I had to ensure that the user could import NumC into a Python program and use methods from the C implementation in Python. To implement this, the <a href="https://docs.python.org/3.6/c-api/index.html">Python/C API</a> was used to convert the methods and structs in C into the PyObjects. With this interface, it was easy to test the functionality of the program and compare it to NumPy. Following this, the add, subtraction, multiplication, negation, absolute value, and power operations were implemented so that they could be used on NumC matrices.
+                                </span><br>
+
+                                <span>
+                                    Next was by far the hardest part of this entire project, which was to optimize the naive implementations of all the matrix operations. This was done by using SIMD instructions with <a href="https://software.intel.com/sites/landingpage/IntrinsicsGuide/">Intel Instrinsic functions</a>. The addition, subtraction, negation, and absolute value functions were rather simplistic. In contrast, the matrix multiplication and power operations proved to be much more difficult. I had tried pretty much everything I could think of on matrix multiply. First I ordered the naive solution loops to
+                                    produce a ~21x speedup, and then used openMP to reach a ~87x speedup, though this speedup was very unstable. 
+                                </span><br>
+
+                                <span>
+                                    Due to this I moved on to methods such as transposing the second matrix and using a loop structure to access the
+                                    elements row by row instead of column by column to take advantage of spatial locality. I also implemented cache blocking
+                                    on my O(n^2) solution by transposing the matrix. Following that I used openMP, but in the end I was only able to reach a
+                                    ~42x speedup. This wasn’t good enough so I moved onto the last method I tried, which was trying to only use Intel Instrinsic stores with SIMD on
+                                    the outermost loop because the store instruction is very costly. To do so, I used a trick where I created an array of SIMD vectors the size of the result matrix’s
+                                    (column size / 4). I first created a naive solution without SIMD and openMP, and it came out to produce a ~15x
+                                    speedup which was pretty bad, but then after a long time I was able to figure out how to convert the structure using SIMD.
+                                    With this I got ~45x speed, and then I used openMP and parallelized the outermost loop and was able to get a ~65x speedup.
+                                    Then, I unrolled the innermost loop a little more, which proved to be difficult, and I was able to reach a ~98x speedup.
+                                </span> <br>
+
+                                <span>
+                                    Then for power, I was aware that there was a O(log(n)) solution for normal exponentiation (e.g. x^y), so I tried to
+                                    replicate that using matrices. This was quite difficult because I needed to create a lot of different temporary matrices
+                                    to store values, but eventually I figured out how to create a solution that is most likely O(log(n) * n^3) using the previous matrix multiplication function that was explained.
+                                </span><br>
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
