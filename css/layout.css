@@ -959,6 +959,11 @@ footer {
    position: relative;
 }
 
+.footer-widget-container {
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+
 footer a, footer a:visited { color: #525252; }
 footer a:hover, footer a:focus { color: #fff; }
 

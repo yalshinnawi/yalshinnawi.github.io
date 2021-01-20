@@ -103,7 +103,6 @@ nav,
 section,
 summary,
 time,
-mark,
 audio,
 video {
   margin: 0;
@@ -175,11 +174,6 @@ ins {
   background-color: #ff9;
   color: #000;
   text-decoration: none;
-}
-
-mark {
-  background-color: #a7f4f6;
-  color: #555;
 }
 
 del {

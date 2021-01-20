@@ -162,8 +162,9 @@ ul#nav li.current a {
   color: #f06000;
 }
 
-/* project section
---------------------------------------------------------------------- */
+/* ------------------------------------------------------------------ */
+/* i. Projects Section
+/* ------------------------------------------------------------------ */
 
 #projects h2 {
   position: relative;
@@ -193,6 +194,8 @@ ul#nav li.current a {
   font-weight: bold;
 }
 
+/* Panel Styles */
+
 #projects .panel > .panel-heading {
   background-color: #1b3850;
 }
@@ -214,13 +217,49 @@ ul#nav li.current a {
   max-width: 920px;
 }
 
+/* Pictures */
+
 #projects .EECS151OverviewPic {
   float: right;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   margin-left: 20px;
   height: 290px;
   width: 550px;
+  /* border-radius: 25px;
+  border: 2px solid #000; */
 }
+
+#projects .overviewPicCap {
+  float: right;
+  margin-top: 3px;
+  margin-bottom: 0px;
+  width: 550px;
+  text-align: center;
+  font: sans-serif;
+  font-size: 13px;
+}
+
+#projects .EECS106AOverViewPic {
+  float: left;
+  width: 45%;
+  height: auto;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  margin-left: 10px;
+  margin-right: 20px;
+  border-radius: 25px;
+  border: 2px solid #000;
+}
+
+#projects .EECS106APicCap {
+  margin-top: -10px;
+  width: 400px;
+  text-align: center;
+}
+
+/* End Pictures */
+
+/* Buttons */
 
 #projects .projectButton {
   width: 100%;
@@ -237,6 +276,10 @@ ul#nav li.current a {
   font-size: 22px;
 }
 
+/* End Buttons */
+
+/* Paragraph & Text Styles */
+
 #projects .longParagraphContainer {
   max-width: 910px;
   margin-left: 20px;
@@ -248,6 +291,8 @@ ul#nav li.current a {
   font-size: 14px;
   line-height: 22px;
 }
+
+/* End Paragraph & Text Styles */
 
 #projects #cpuDesign .panel > .panel-heading {
   background-color: #1b3850;
@@ -284,18 +329,21 @@ ul#nav li.current a {
   width: 60%;
 }
 
-#projects .close,
-.IDEXClose {
+#projects .IDEXClose,
+.MEMWBClose,
+.IFClose {
   color: rgb(209, 8, 8);
   float: right;
   font-size: 50px;
   font-weight: bold;
 }
 
-#projects .close:hover,
-.close:focus,
-.IDEXClose:hover,
-.IDEXClose:focus {
+#projects .IDEXClose:hover,
+.IDEXClose:focus,
+.MEMWBClose:hover,
+.MEMWBClose:focus,
+.IFClose:hover,
+.IFClose:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
@@ -327,14 +375,119 @@ ul#nav li.current a {
   font-size: 14px;
 }
 
+#projects .IDEXStageZoom {
+  width: 200%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+#projects .IDEX-modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 100%;
+}
+
+#projects .longDescriptionCPU {
+  max-width: 910px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  margin-top: -10px;
+}
+
+#projects .spanFormat {
+  display: block;
+  margin-bottom: -15px;
+}
+
+#projects .YogaContainer {
+  margin-top: 4px;
+  max-width: 1000px;
+}
+
+#projects .YogaParagraphIntro {
+  font-size: 18px;
+  line-height: 24px;
+  /* text-align: justify; */
+}
+
+#projects .YogaTitles {
+  font-size: 20px;
+  color: #d6f7ff;
+}
+
+#projects .arucoTagPic {
+  margin-top: 80px;
+  margin-bottom: 5px;
+  border-radius: 25px;
+  border: 2px solid #000;
+}
+
+#projects .arucoTagCap {
+  margin-top: 3px;
+  text-align: center;
+}
+
+#projects .humanBotPic {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  height: auto;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  border-radius: 25px;
+  border: 2px solid #000;
+}
+
+#projects .videoFormat {
+  border-radius: 25px;
+  border: 2px solid #000;
+}
+
+#projects .gitletCoverPhoto {
+  width: 100%;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  margin-bottom: 0px;
+}
+
+#projects .olIntro {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+#projects .markChange {
+  background-color: #eff1f1;
+  color: #000000;
+}
+
+#projects .ulFormat > li:not(:last-child) {
+  margin-bottom: -5px;
+}
+
+#projects .commitsExamplePic {
+  width: 100%;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  margin-bottom: 0px;
+}
+
 /* ------------------------------------------------------------------ */
 /* i. Footer
 /* ------------------------------------------------------------------ */
 
 footer {
   padding-top: 48px;
-  margin-bottom: 48px;
+  height: 180px;
   color: #303030;
+  background-color: black;
   font-size: 14px;
   text-align: center !important;
   position: relative !important;
@@ -349,46 +502,21 @@ footer a:focus {
   color: #fff;
 }
 
-/* copyright */
-footer .copyright {
-  margin: 0;
-  padding: 0;
-}
-footer .copyright li {
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-  line-height: 24px;
-}
-.ie footer .copyright li {
-  display: inline;
-}
-footer .copyright li:before {
-  content: "\2022";
-  padding-left: 10px;
-  padding-right: 10px;
-  color: #095153;
-}
-footer .copyright li:first-child:before {
-  display: none;
-}
-
 /* social links */
 footer .social-links {
   margin: 18px 0 30px 0;
+  margin-left: 910px;
   padding: 0;
   font-size: 30px;
 }
 footer .social-links li {
   display: inline-block;
-  margin: 0;
   padding: 0;
-  margin-left: 42px;
   color: #f06000;
 }
 
 footer .social-links li:first-child {
-  margin-left: 0;
+  margin-right: 50px;
 }
 
 /* Go To Top Button */

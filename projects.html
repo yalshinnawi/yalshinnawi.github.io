@@ -27,56 +27,6 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-    <style>
-
-        /* The Modal (background) */
-        .modal {
-            display: none;
-            /* Hidden by default */
-            position: fixed;
-            /* Stay in place */
-            z-index: 1;
-            /* Sit on top */
-            padding-top: 100px;
-            /* Location of the box */
-            left: 0;
-            top: 0;
-            width: 100%;
-            /* Full width */
-            height: 100%;
-            /* Full height */
-            overflow: auto;
-            /* Enable scroll if needed */
-            background-color: rgb(0, 0, 0);
-            /* Fallback color */
-            background-color: rgba(0, 0, 0, 0.4);
-            /* Black w/ opacity */
-        }
-
-        /* Modal Content */
-        .modal-content {
-            background-color: #fefefe;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-        }
-
-        /* The Close Button */
-        .close {
-            color: #aaaaaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: #000;
-            text-decoration: none;
-            cursor: pointer;
-        }
-    </style>
 
 </head>
 
@@ -118,22 +68,30 @@
                     <div class="col-lg-12">
                         <div class="container">
                             <div>
-                                <img src="images/EECS151L Final Project High-level Overview of System.png" alt="" class="EECS151OverviewPic">
+                                <img src="images/EECS151L Final Project High-level Overview of System.png" alt="High Level Overview" class="EECS151OverviewPic">
+                                </img>
+                                <figcaption class="overviewPicCap">CPU High Level Organization</figcaption>
                             </div>
                             <p class="panelHeaderIntro">
-                                The goal of this project was to design and implement a 3-stage pipelined Central Processing Unit (CPU) using the
-                                RISC-V
-                                ISA programmed in Verilog to run on a Zynq 7000-series FPGA. In addition to having a processor that could run
-                                the base
-                                RV32 instruction set, there had to also be separate modules in the datapath for handling input/output (IO) to
-                                transmit
-                                and receive data. An on-chip Universial Asynchronous Reciever-Transmitter (UART) using the technique of Memory
-                                Mapped IO
-                                (MMIO) was to be implemented to send and receive bytes using RISC-V load and store instructions. This interface
-                                would
-                                then allow the CPU to store the user’s instructions into BIOS memory which could then be read on the following
-                                cycle
-                                instead of reading from Instruction Memory (IMEM).
+                                <span class="spanFormat">
+                                    The goal of this project was to design and implement a 3-stage pipelined Central Processing Unit (CPU) using the
+                                    RISC-V
+                                    ISA programmed in Verilog to run on a Zynq 7000-series FPGA. In addition to having a processor that could run
+                                    the base
+                                    RV32 instruction set, there had to also be separate modules in the datapath for handling input/output (IO) to
+                                    transmit
+                                    and receive data.
+                                </span><br>
+
+                                <span>
+                                    An on-chip Universial Asynchronous Reciever-Transmitter (UART) using the technique of Memory
+                                    Mapped IO
+                                    (MMIO) was to be implemented to send and receive bytes using RISC-V load and store instructions. This interface
+                                    would
+                                    then allow the CPU to store the user’s instructions into BIOS memory which could then be read on the following
+                                    cycle
+                                    instead of reading from Instruction Memory (IMEM).
+                                </span>
                             </p>
                         </div>
                     </div>
@@ -181,7 +139,7 @@
                                 </button>
                                 <div id="myModal" class="modal">
                                     <div class="modal-content">
-                                        <span class="close">&times</span>
+                                        <span class="IFClose">&times</span>
                                         <img src="images/EECS151DataPath-IF Stage.jpg" alt="Zoomed In IF Stage" class="IFStageZoom" >
                                     </div>
                                 </div>
@@ -192,49 +150,67 @@
                                     Enlarge
                                 </button>
                                 <div id="IDEXModal" class="modal">
-                                    <div class="modal-content">
+                                    <div class="IDEX-modal-content">
                                         <span class="IDEXClose">&times</span>
-                                        <img src="images/EECS151DataPath-IDEX Stage.jpg" alt="Zoomed In IDEX Stage" class="IFStageZoom">
+                                        <img id="IDEXImg" src="images/EECS151DataPath-IDEX Stage.jpg" alt="Zoomed In IDEX Stage" class="IDEXStageZoom">
                                     </div>
                                 </div>
                             </div>
                         
                             <div class="col-md-4">
                                 <img src="images/EECS151DataPath-MEMWB Stage.jpg" alt="MEMWB Stage" class="centerImage">
+                                <button id="memwbBtn" class="stageButtons">
+                                    Enlarge
+                                </button>
+                                <div id="MEMWBModal" class="modal">
+                                    <div class="modal-content">
+                                        <span class="MEMWBClose">&times</span>
+                                        <img src="images/EECS151DataPath-MEMWB Stage.jpg" alt="Zoomed In MEMWB Stage" class="IFStageZoom">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
-                        <p>
-                            <span>
-                                In terms of the original goal, the CPU checked all the marks. The entire datapath was implemented with a 3-stage
-                                pipeline that could send and receive data through the UART MMIO interface. Through this interface, the CPU was able to
-                                interact with on-board buttons, switches, LEDS, and the audio output with the Subtractive Synthesizer.
-                            </span><br>
-
-                            <span>
-                                By the final checkpoint, the processor was able to reach a clock speed of ~70MHz. The max path delay turned out to be in
-                                the IDEX Stage of the 3-stage pipeline. Specifically the delay was between the initial instruction input to the IDEX
-                                Stage to the Synthesizer block at the end of this stage. It is speculated that this delay occurs because of the need for
-                                signed multiplication and buffer that exists in the PWM block for delivering audio to the on-board audio port.
-                                Multiplication is a very intensive process and the current method used in this design is not optimal.
-                            </span><br>
-
-                            <span>
-                                Additionally, it is important to mention that before implementing the NCO, PWM and Synthesizer, the critical path
-                                instead existed between the MEMWB stage and IDEX stage during forwarding. In the previous design we had reached a final
-                                clock speed of ~76MHz. It is believed that this critical path existed because of the need for the RegFile return address
-                                and write enable from 2 cycles ago.
-                            </span><br>
-
-                            <span>
-                                For both designs, the CPI of the mmult program was ~1.18 most likely due to the design’s scheme of handling jumps and
-                                branch instructions by simply adding a NOP to the next cycle. The minimum clock period for the final design was 0.214s
-                                for the mmult program, the number of Slice LUTs used was 2,283, and the number of Slice Registers used was 905.
-                            </span>
-                        </p>
+                        <div class="longDescriptionCPU">
+                            <p class="paragraphDefault">
+                                <span class="spanFormat">
+                                    In terms of the original goal, the CPU checked all the marks. The entire datapath was implemented with a 3-stage
+                                    pipeline that could send and receive data through the UART MMIO interface. Through this interface, the CPU was able
+                                    to
+                                    interact with on-board buttons, switches, LEDS, and the audio output with the Subtractive Synthesizer.
+                                </span><br>
+                                
+                                <span class="spanFormat">
+                                    By the final checkpoint, the processor was able to reach a clock speed of ~70MHz. The max path delay turned out to
+                                    be in
+                                    the IDEX Stage of the 3-stage pipeline. Specifically the delay was between the initial instruction input to the IDEX
+                                    Stage to the Synthesizer block at the end of this stage. It is speculated that this delay occurs because of the need
+                                    for
+                                    signed multiplication and buffer that exists in the PWM block for delivering audio to the on-board audio port.
+                                    Multiplication is a very intensive process and the current method used in this design is not optimal.
+                                </span><br>
+                                
+                                <span class="spanFormat">
+                                    Additionally, it is important to mention that before implementing the NCO, PWM and Synthesizer, the critical path
+                                    instead existed between the MEMWB stage and IDEX stage during forwarding. In the previous design we had reached a
+                                    final
+                                    clock speed of ~76MHz. It is believed that this critical path existed because of the need for the RegFile return
+                                    address
+                                    and write enable from 2 cycles ago.
+                                </span><br>
+                                
+                                <span>
+                                    For both designs, the CPI of the mmult program was ~1.18 most likely due to the design’s scheme of handling jumps
+                                    and
+                                    branch instructions by simply adding a NOP to the next cycle. The minimum clock period for the final design was
+                                    0.214s
+                                    for the mmult program, the number of Slice LUTs used was 2,283, and the number of Slice Registers used was 905.
+                                </span>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -242,161 +218,189 @@
 
         <div class="panel panel-default center-block" style="width: 50%">
             <div class="panel-heading text-center">
-                Yoga Pose Correction
+                <h1 class="panelTitles">
+                    Yoga Pose Correction
+                </h1>
             </div>
             <div class="panel-body">
                 <div class="row">
-                    <div class="col-lg-6" style="text-align: center;">
-                        <img src="images/RoboticsCoverPic.png" alt="">
-                        <figcaption>
-                            Baxter Robot and the HumanBot Model
-                        </figcaption>
-                    </div>
-                    <div class="col-lg-6">
-                        <p>
-                            <span>
-                                This project was inspired by real world challenges that have been caused by the COVID-19 pandemic. Because of social
-                                distancing precautions people are unable to participate in typical yoga classes. Yoga instructors often have to put
-                                their hands on their students in order to help them with their poses.
-                            </span><br>
-                            
-                            <span>
-                                This project attempts to use the popular Rethink Robotics robot Baxter as a makeshift yoga instructor. The goal of this
-                                project is to correct a person's pose. Baxter reaches out and nudges the person's arms from their original position into
-                                the desired one, attempting to mimic what an instructor would do.
-                            </span><br>
-
-                            <span>
-                                The overall goal of the project was to correct a person's body position using Baxter. More specifically, in our initial
-                                project proposal we planned to move someone’s arms into the YMCA poses, but after we began to work through the project
-                                we had to tone this down quite a bit. As a result, our goal turned into just getting Baxter to move someone’s arms into
-                                a T-Pose position as shown in the figure.
-                            </span><br>
-
-                            <span>
-                                Because of the COVID-19 pandemic all of this work was completed using Gazebo simulation software to model Baxter and the
-                                human participant.
-                            </span>
-                        </p>
+                    <div class="col-lg-12">
+                        <div class="YogaContainer">
+                            <div>
+                                <img class="EECS106AOverViewPic" src="images/RoboticsCoverPic.png" alt="Baxter w/ HumanBot">
+                            </div>
+                            <p class="YogaParagraphIntro">
+                                <span class="spanFormat">
+                                    This project was inspired by real world challenges that have been caused by the COVID-19 pandemic. Because
+                                    of social
+                                    distancing precautions people are unable to participate in typical yoga classes. Yoga instructors often have
+                                    to put
+                                    their hands on their students in order to help them with their poses.
+                                </span><br>
+                        
+                                <span class="spanFormat">
+                                    This project attempts to use the popular Rethink Robotics robot Baxter as a makeshift yoga instructor. The
+                                    goal of
+                                    this
+                                    project is to correct a person's pose. Baxter reaches out and nudges the person's arms from their original
+                                    position
+                                    into
+                                    the desired one, attempting to mimic what an instructor would do.
+                                </span><br>
+                        
+                                <span>
+                                    Because of the COVID-19 pandemic all of this work was completed using Gazebo simulation software to model
+                                    Baxter and
+                                    the
+                                    human participant.
+                                </span>
+                            </p>
+                            <figcaption class="EECS106APicCap">
+                                Baxter Robot and the HumanBot Model
+                            </figcaption>
+                        </div>
                     </div>
                 </div>
             </div>
-            <button data-toggle="collapse" data-target="#yogaPose">
+            <button class="projectButton" data-toggle="collapse" data-target="#yogaPose">
                 Show More
             </button>
             <div id="yogaPose" class="panel collapse">
                 <div class="row">
                     <div class="col-lg-12">
-                        <p>
-                            In order to accomplish our project goals this really required two main components: the mannequin's pose and a plan to
-                            move the mannequin’s arms. To acquire the mannequin's pose, we used Baxter's head camera and arUco markers. We chose to
-                            use arUco tags because they make it possible to get the three dimensional position of the tag using only one camera.
-                            They are also fairly well documented and there are libraries available to detect arUco markers. While arUco tags may be
-                            a bit cumbersome for a user in a real life scenario they offer a simple and well tested solution for defining the
-                            location of objects in 3D space using just one camera. In future iterations it may make sense to use a RealSense camera
-                            or IMUs for pose estimation.
-                            Each aspect of the simulation/project design is further discussed below in the Project Details section.
-                        </p>
+                        <div class="longParagraphContainer">
+                            <p class="paragraphDefault">
+                                In order to accomplish our project goals this really required two main components: the mannequin's pose and a plan to
+                                move the mannequin’s arms. To acquire the mannequin's pose, we used Baxter's head camera and arUco markers. We chose to
+                                use arUco tags because they make it possible to get the three dimensional position of the tag using only one camera.
+                                They are also fairly well documented and there are libraries available to detect arUco markers. While arUco tags may be
+                                a bit cumbersome for a user in a real life scenario they offer a simple and well tested solution for defining the
+                                location of objects in 3D space using just one camera. In future iterations it may make sense to use a RealSense camera
+                                or IMUs for pose estimation.
+                                Each aspect of the simulation/project design is further discussed below in the Project Details section.
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-6">
-                        <h2>
-                            ArUco Tags
-                        </h2>
-                        <p>
-                            There are several ways to get the pose of a person. Kinect, IMUs, or other sensors might work. We decided to use arUco
-                            tags from the OpenCV library. These are pre-defined tags that allow a single camera to find the frame of the tag
-                            relative to the camera in 3D space. Luckily enough there is already a ROS package for detecting arUco tags. In this
-                            design we ended up using the aruco_detect package. By subscribing to the fiducial_transforms topic published by the
-                            aruco_detect package, we were able to get the frame of the arUco tag on the mannequin's arm in the head_camera frame.
-                            This pose was then transformed to the base frame using a tf_buffer.
-                        </p>
+                        <div class="panel panel-default center-block" style="width: 95%; margin-left: 20px;">
+                            <div class="panel-heading text-center">
+                                <h2 class="YogaTitles">
+                                    ArUco Tags
+                                </h2>
+                            </div>
+                            <div class="panel-body">
+                                <p class="paragraphDefault">
+                                    There are several ways to get the pose of a person. Kinect, IMUs, or other sensors might work. We decided to use
+                                    arUco
+                                    tags from the OpenCV library. These are pre-defined tags that allow a single camera to find the frame of the tag
+                                    relative to the camera in 3D space. Luckily enough there is already a ROS package for detecting arUco tags. In this
+                                    design we ended up using the aruco_detect package. By subscribing to the fiducial_transforms topic published by the
+                                    aruco_detect package, we were able to get the frame of the arUco tag on the mannequin's arm in the head_camera
+                                    frame.
+                                    This pose was then transformed to the base frame using a tf_buffer.
+                                </p>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="col-lg-6">
-                        <img src="images/roboticsArucoTagPic.webp" alt="">
-                        <figcaption>
-                            ArUco Tag Detection
+                        <img src="images/roboticsArucoTagPic.webp" alt="ArucoTag on HumanBot" class="arucoTagPic">
+                        <figcaption class="arucoTagCap"">
+                            ArUco Tag Detection on HumanBot
                         </figcaption>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-6">
-                        <img src="images/MannequinPic.jpg" alt="">
-                        <figcaption>
-                            Mannequin Spawn
+                        <img src="images/MannequinPic.jpg" alt="HumanBot Mannequin" class="humanBotPic">
+                        <figcaption class="arucoTagCap">
+                            HumanBot Spawn
                         </figcaption>
                     </div>
-                
+
                     <div class="col-lg-6">
-                        <h2>
-                            HumanBot - Spawning the Mannequin
-                        </h2>
-                        <p>
-                            HumanBot is the name that we gave the mannequin. HumanBot is defined by a urdf.xacro file. This file defines his links,
-                            joints, and physics.
-                            
-                            HumanBot’s arms defined to move up and down so that they can be relocated by Baxter. Additionally, as can be seen in the
-                            picture to the right, there are two arUco tags on the mannequin's arms. These are modeled as fixed joints onto the arm
-                            and allow the head_camera to detect the arm.
-                        </p>
+                        <div class="panel panel-default center-block" style="width: 95%;">
+                            <div class="panel-heading text-center">
+                                <h2 class="YogaTitles">
+                                    HumanBot - Spawning the Mannequin
+                                </h2>
+                            </div>
+                            <div class="panel-body">
+                                <p class="paragraphDefault">
+                                    HumanBot is the name that we gave the mannequin, and it is defined by a urdf.xacro file. This file defines his links,
+                                    joints, and physics.
+                                    
+                                    HumanBot’s arms defined to move up and down so that they can be relocated by Baxter. Additionally, as can be seen in the
+                                    picture to the right, there are two arUco tags on the mannequin's arms. These are modeled as fixed joints onto the arm
+                                    and allow the head_camera to detect the arm.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            
                 <div class="row">
                     <div class="col-lg-6">
-                        <h2>
-                            Motion Planning with Baxter
-                        </h2>
-                        <p>
-                            Finally, with this new pose from the aruco_detect package we were able to use the MoveIt package to handle the path
-                            planning and collision detection. The ultimate reason for using MoveIt instead of simply using an Inverse Kinematics
-                            solver was because initially we had planned to add resistance to HumanBot's arm and the path planner would allow for
-                            a
-                            sense of control as the robot continues to move the arms.
-                        </p>
+                        <div class="panel panel-default center-block" style="width: 95%; margin-left: 20px;">
+                            <div class="panel-heading text-center">
+                                <h2 class="YogaTitles">
+                                    Motion Planning with Baxter
+                                </h2>
+                            </div>
+                            <div class="panel-body">
+                                <p class="paragraphDefault">
+                                    Finally, with this new pose from the aruco_detect package we were able to use the MoveIt package to handle the path
+                                    planning and collision detection. The ultimate reason for using MoveIt instead of simply using an Inverse Kinematics
+                                    solver was because initially we had planned to add resistance to HumanBot's arm and the path planner would allow for
+                                    a
+                                    sense of control as the robot continues to move the arms.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 
                     <div class="col-lg-6">
-                        <img src="images/roboticsMotionPlanning.webp" alt="">
-                        <figcaption>
+                        <img src="images/roboticsMotionPlanning.webp" alt="Motion Planning" class="humanBotPic" style="margin-top: 40px">
+                        <figcaption class="arucoTagCap">
                             Baxter and HumanBot
                         </figcaption>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
-                        <p>
-                            <h2>Results & Video Demo</h2>
-                            <p>
-                                <span>
-                                    In the end we were able to successfully use Baxter to move the HumanBot’s arms. However, there are many improvements to
-                                    be made as mentioned at the end of the Design section. The final product used manual inputs to move the HumanBot’s arms,
-                                    but we were able to find the exact location of the aruco_tag as shown in the next section
-                                </span><br>
+                        <div class="panel panel-default center-block" style="width: 95%;">
+                            <div class="panel-heading text-center">
+                                <h2 class="YogaTitles">Results & Video Demo</h2>
+                            </div>
 
-                                <span>
-                                    In the video, it first shows in RVIZ how Baxter’s head_camera can target and get the pose of an aruco tag. This is shown
-                                    in the bottom left corner of the screen. Using the pose of the tag, Baxter can then plan his movement to the HumanBot
-                                    and in the case of this demonstration, Baxter lifts HumanBot's arm into a T-Pose position. After the movement is
-                                    finished, the pose of the aruco_tag, shown in RVIZ defined in the world frame of Gazebo, is shown to have the same pose
-                                    as the calculated pose in the terminal.
-                                </span><br>
-                            </p>
-                        </p>
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src="videos/RoboticsDemo.mp4" frameborder="0"></iframe>
+                            <div class="panel-body">
+                                <p class="paragraphDefault">
+                                    <span class="spanFormat">
+                                        In the end we were able to successfully use Baxter to move the HumanBot’s arms. However, there are many
+                                        improvements to
+                                        be made as mentioned at the end of the Design section. The final product used manual inputs to move the
+                                        HumanBot’s arms,
+                                        but we were able to find the exact location of the aruco_tag.
+                                    </span><br>
+                                
+                                    <span class="spanFormat">
+                                        In the video, it first shows in RVIZ how Baxter’s head_camera can target and get the pose of an aruco tag. This
+                                        is shown
+                                        in the bottom left corner of the screen. Using the pose of the tag, Baxter can then plan his movement to the
+                                        HumanBot
+                                        and in the case of this demonstration, Baxter lifts HumanBot's arm into a T-Pose position. After the movement is
+                                        finished, the pose of the aruco_tag, shown in RVIZ defined in the world frame of Gazebo, is shown to have the
+                                        same pose
+                                        as the calculated pose in the terminal.
+                                    </span><br>
+                                </p>
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <iframe class="embed-responsive-item; videoFormat" src="videos/RoboticsDemo.mp4" frameborder="0"></iframe>
+                                </div>
+                            </div>
                         </div>
-                        <!-- <div style="text-align: center;">
-
-                            <video id="roboticsVideo" width="900" height="500">
-                                <source src="videos/RoboticsDemo.mp4" type="video/mp4">
-                                Your browser does not support HTML video.
-                            </video>
-                            <button onclick="playPause()">
-                                Play/Pause
-                            </button>
-                        </div> -->
                     </div>
                 </div>
             </div>
@@ -404,15 +408,17 @@
 
         <div class="panel panel-default center-block" style="width: 50%">
             <div class="panel-heading text-center">
-                Gitlet
+                <h1 class="panelTitles">
+                    Gitlet
+                </h1>
             </div>
             <div class="panel-body">
                 <div class="row">
                     <div class="col-lg-6">
-                        <p>
+                        <p class="YogaParagraphIntro">
                             <span>
                                 With the inspiration of the popular system Git, I created a smaller and simpler version-control system named Gitlet in CS61B at UC Berkeley. A version-control system is a backup system for collections of files. The main functionality that Gitlet supports is:
-                                <ol>
+                                <ol class="olIntro">
                                     <li>Saving the contents of entire directories of files.</li>
                                     <li>Restoring a version of one or more files or entire commits.</li>
                                     <li>Viewing the history of your backups via a log.</li>
@@ -424,129 +430,170 @@
                     </div>
 
                     <div class="col-lg-6">
-                        <img src="images/gitletCoverPhoto.png" alt="">
-                        Image Credit: <a href="https://medium.com/@gohberg/the-biggest-misconception-about-git-b2f87d97ed52">Biggest Misconception About Git</a>
+                        <img src="images/gitletCoverPhoto.png" alt="Git Example" class="gitletCoverPhoto">
+                        <figcaption class="arucoTagCap">
+                            Image Credit: <a href="https://medium.com/@gohberg/the-biggest-misconception-about-git-b2f87d97ed52" target="_blank">Biggest
+                                Misconception About Git</a>
+                        </figcaption>
                     </div>
                 </div>
-                <button data-toggle="collapse" data-target="#gitletTab">
+                <button class="projectButton" data-toggle="collapse" data-target="#gitletTab">
                     Show More
                 </button>
                 <div id="gitletTab" class="panel collapse">
                     <div class="row">
                         <div class="col-lg-12">
-                            <p>
-                                <span>
-                                    The purpose of a version-control system is to help save different versions of your project periodically so that you can
-                                    go back to previous versions if you mess something up. This control system also allows others to push their own versions
-                                    onto the control-system so that one can collaborate on a project without discarding previous work or modifying it, you
-                                    would instead create a new version.
-                                </span><br>
-                                <span>
-                                    In this project I implemented the following git features: <mark>init</mark>, <mark>add</mark>,
-                                    <mark>commit</mark>, <mark>rm</mark>, <mark>log</mark>, <mark>global-log</mark>, <mark>find</mark>, <mark>status</mark>, <mark>checkout</mark>, <mark>branch</mark>, <mark>rm-branch</mark>, <mark>reset</mark>, and <mark>merge</mark>.
-                                </span>
-                                <span>
-                                    To mimick the tree-like structure of commits that git uses, gitlet used different kinds of objects:
-                                    <ul>
-                                        <li> <b>blobs</b>: contents of the files, serving as different versions of a document or project.</li>
-                                        <li> <b>trees</b>: data structure made of commit objects that connect to each other through their respective parent commits.</li>
-                                        <li> <b>commits</b>: combinations of log messages, a reference to a tree, references to different blobs, references to parent commits, and other metadata (commit date, author, commit message, and the commit ID)</li>
-                                    </ul>
-                                </span>
-                            </p>
+                            <div class="longParagraphContainer">
+                                <p class="paragraphDefault">
+                                    <span>
+                                        The purpose of a version-control system is to help save different versions of your project periodically so that you
+                                        can
+                                        go back to previous versions if you mess something up. This control system also allows others to push their own
+                                        versions
+                                        onto the control-system so that one can collaborate on a project without discarding previous work or modifying it,
+                                        you
+                                        would instead create a new version.
+                                    </span><br>
+                                    <span>
+                                        In this project I implemented the following git features: <mark class="markChange">init</mark>, <mark class="markChange">add</mark>,
+                                        <mark class="markChange">commit</mark>, <mark class="markChange">rm</mark>, <mark class="markChange">log</mark>, <mark class="markChange">global-log</mark>, <mark class="markChange">find</mark>,
+                                        <mark class="markChange">status</mark>, <mark class="markChange">checkout</mark>, <mark class="markChange">branch</mark>, <mark class="markChange">rm-branch</mark>, <mark class="markChange">reset</mark>, and
+                                        <mark class="markChange">merge</mark>.
+                                    </span>
+
+                                    <span>
+                                        To mimick the tree-like structure of commits that git uses, gitlet used different kinds of objects:
+                                        <ul class="ulFormat">
+                                            <li> <b>blobs</b>: contents of the files, serving as different versions of a document or project.</li>
+                                            <li> <b>trees</b>: data structure made of commit objects that connect to each other through their respective
+                                                parent commits.</li>
+                                            <li> <b>commits</b>: combinations of log messages, a reference to a tree, references to different blobs,
+                                                references to parent commits, and other metadata (commit date, author, commit message, and the commit ID)
+                                            </li>
+                                        </ul>
+                                    </span>
+                                </p>
+                            </div>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-lg-6">
-                            <p>
-                                Each blob and commit has a unique integer ID that is created using the same cryptographic hash function SHA-1 (Secure
-                                Hash 1) that Git uses. The tree structures are made of commits and these commits reference different blobs which
-                                represent versions of the files that the user has. An example of this structure is shown below, where the commit
-                                contains the references to the blobs, parent link, the date the commit was made, and version names. The blob contains
-                                the data of each file, and both the commits and blobs have their own unique SHA-1 hash value. Image Credit: <a href="https://inst.eecs.berkeley.edu/~cs61b/fa19/materials/proj/proj3/" target="_blank">UC Berkeley CS61B Fall, 2019</a>
+                            <p class="paragraphDefault" style="margin-left: 20px;">
+                                Each blob and commit has a unique integer ID that is created using the same cryptographic hash function
+                                SHA-1 (Secure
+                                Hash 1) that Git uses. The tree structures are made of commits and these commits reference different blobs
+                                which
+                                represent versions of the files that the user has. An example of this structure is shown below, where the
+                                commit
+                                contains the references to the blobs, parent link, the date the commit was made, and version names. The blob
+                                contains
+                                the data of each file, and both the commits and blobs have their own unique SHA-1 hash value.
                             </p>
                         </div>
 
                         <div class="col-lg-6">
-                            <img src="images/gitletCommitsAndBlobs.png" alt="">
+                            <img src="images/gitletCommitsAndBlobs.png" alt="gitletPic" class="commitsExamplePic">
+                            <figcaption class="arucoTagCap">
+                                Image Credit:
+                                <a href="https://inst.eecs.berkeley.edu/~cs61b/fa19/materials/proj/proj3/" target="_blank">UC Berkeley CS61B
+                                    Fall, 2019</a>
+                            </figcaption>
                         </div>
                     </div>
-
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <p>
-                                Much like Git, gitlet is initialized first using init, creating a .gitlet file that contains the head commit which can then be used to branch off and create different versions by adding new files and commiting, or by creating a new branch which will detach from the master branch. This project was a great experience, and really made it easier to understand what Git can really do.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            
+                </div>    
             </div>
         </div>
 
         <div class="panel panel-default center-block" style="width: 50%">
             <div class="panel-heading text-center">
-                NumC
+                <h1 class="panelTitles">
+                    NumC
+                </h1>
             </div>
-            <div class="panel-body">
-                <div class="row">
+            <div class="panel-body" >
+                <div class="row" style="margin-bottom: 15px;">
                     <div class="col-lg-6">
                         <img src="images/NumC.png" alt="">
-
-                        Image Credit: <a href="https://commons.wikimedia.org/wiki/File:NumPy_logo.svg" target="_blank">NumPy logo </a>
+                        <figcaption class="arucoTagCap">
+                            Image Credit: <a href="https://commons.wikimedia.org/wiki/File:NumPy_logo.svg" target="_blank">NumPy logo </a>
+                        </figcaption>
                         
                     </div>
                         
-                    <div class="col-lg-6">
+                    <div class="col-lg-6; YogaParagraphIntro" style="margin-top: 15px;">
                         <p>
                             In this project I implemented a slower version of numpy, called numc in the programming language C. Although the matrix multiplication and power operations are not as fast as numpy, they are still much better than the naive implementations via parallel programming using OpenMP and SIMD. This was a very difficult project, and required a lot of thought to get to the required speedup.
                         </p>
                     </div>
                 </div>
 
-                <button data-toggle="collapse" data-target="#numcTab">
+                <button class="projectButton" data-toggle="collapse" data-target="#numcTab">
                     Show More
                 </button>
                 <div id="numcTab" class="panel collapse">
                     <div class="row">
                         <div class="col-lg-12">
-                            <p>
-                                <span>
-                                    To recreate the functionality of NumPy, the first task was to build a struct in C that could work like matrices do in
-                                    NumPy. Specifically this meant that I had to create functions that could properly take slices from arrays. As easy as
-                                    this sounds, it became quite complicated because of the properties of allocation and deallocation of memory in C. For
-                                    instance, if a slice of a matrix was to be deallocated, that did not mean we should lose reference to the parent matrix.
-                                </span><br>
-
-                                <span>
-                                    Once the matrix structure was properly created, the Python-C interface was then tackled. To work like numPy, I had to ensure that the user could import NumC into a Python program and use methods from the C implementation in Python. To implement this, the <a href="https://docs.python.org/3.6/c-api/index.html">Python/C API</a> was used to convert the methods and structs in C into the PyObjects. With this interface, it was easy to test the functionality of the program and compare it to NumPy. Following this, the add, subtraction, multiplication, negation, absolute value, and power operations were implemented so that they could be used on NumC matrices.
-                                </span><br>
-
-                                <span>
-                                    Next was by far the hardest part of this entire project, which was to optimize the naive implementations of all the matrix operations. This was done by using SIMD instructions with <a href="https://software.intel.com/sites/landingpage/IntrinsicsGuide/">Intel Instrinsic functions</a>. The addition, subtraction, negation, and absolute value functions were rather simplistic. In contrast, the matrix multiplication and power operations proved to be much more difficult. I had tried pretty much everything I could think of on matrix multiply. First I ordered the naive solution loops to
-                                    produce a ~21x speedup, and then used openMP to reach a ~87x speedup, though this speedup was very unstable. 
-                                </span><br>
-
-                                <span>
-                                    Due to this I moved on to methods such as transposing the second matrix and using a loop structure to access the
-                                    elements row by row instead of column by column to take advantage of spatial locality. I also implemented cache blocking
-                                    on my O(n^2) solution by transposing the matrix. Following that I used openMP, but in the end I was only able to reach a
-                                    ~42x speedup. This wasn’t good enough so I moved onto the last method I tried, which was trying to only use Intel Instrinsic stores with SIMD on
-                                    the outermost loop because the store instruction is very costly. To do so, I used a trick where I created an array of SIMD vectors the size of the result matrix’s
-                                    (column size / 4). I first created a naive solution without SIMD and openMP, and it came out to produce a ~15x
-                                    speedup which was pretty bad, but then after a long time I was able to figure out how to convert the structure using SIMD.
-                                    With this I got ~45x speed, and then I used openMP and parallelized the outermost loop and was able to get a ~65x speedup.
-                                    Then, I unrolled the innermost loop a little more, which proved to be difficult, and I was able to reach a ~98x speedup.
-                                </span> <br>
-
-                                <span>
-                                    Then for power, I was aware that there was a O(log(n)) solution for normal exponentiation (e.g. x^y), so I tried to
-                                    replicate that using matrices. This was quite difficult because I needed to create a lot of different temporary matrices
-                                    to store values, but eventually I figured out how to create a solution that is most likely O(log(n) * n^3) using the previous matrix multiplication function that was explained.
-                                </span><br>
-                            </p>
+                            <div class="longParagraphContainer">
+                                <p class="paragraphDefault">
+                                    <span class="spanFormat">
+                                        To recreate the functionality of NumPy, the first task was to build a struct in C that could work like matrices do
+                                        in
+                                        NumPy. Specifically this meant that I had to create functions that could properly take slices from arrays. As easy
+                                        as
+                                        this sounds, it became quite complicated because of the properties of allocation and deallocation of memory in C.
+                                        For
+                                        instance, if a slice of a matrix was to be deallocated, that did not mean we should lose reference to the parent
+                                        matrix.
+                                    </span><br>
+                                    
+                                    <span class="spanFormat">
+                                        Once the matrix structure was properly created, the Python-C interface was then tackled. To work like numPy, I had
+                                        to ensure that the user could import NumC into a Python program and use methods from the C implementation in Python.
+                                        To implement this, the <a href="https://docs.python.org/3.6/c-api/index.html">Python/C API</a> was used to convert
+                                        the methods and structs in C into the PyObjects. With this interface, it was easy to test the functionality of the
+                                        program and compare it to NumPy. Following this, the add, subtraction, multiplication, negation, absolute value, and
+                                        power operations were implemented so that they could be used on NumC matrices.
+                                    </span><br>
+                                    
+                                    <span class="spanFormat">
+                                        Next was by far the hardest part of this entire project, which was to optimize the naive implementations of all the
+                                        matrix operations. This was done by using SIMD instructions with <a
+                                            href="https://software.intel.com/sites/landingpage/IntrinsicsGuide/">Intel Instrinsic functions</a>. The
+                                        addition, subtraction, negation, and absolute value functions were rather simplistic. In contrast, the matrix
+                                        multiplication and power operations proved to be much more difficult. I had tried pretty much everything I could
+                                        think of on matrix multiply. First I ordered the naive solution loops to
+                                        produce a ~21x speedup, and then used openMP to reach a ~87x speedup, though this speedup was very unstable.
+                                    </span><br>
+                                    
+                                    <span class="spanFormat">
+                                        Due to this I moved on to methods such as transposing the second matrix and using a loop structure to access the
+                                        elements row by row instead of column by column to take advantage of spatial locality. I also implemented cache
+                                        blocking
+                                        on my O(n^2) solution by transposing the matrix. Following that I used openMP, but in the end I was only able to
+                                        reach a
+                                        ~42x speedup. This wasn’t good enough so I moved onto the last method I tried, which was trying to only use Intel
+                                        Instrinsic stores with SIMD on
+                                        the outermost loop because the store instruction is very costly. To do so, I used a trick where I created an array
+                                        of SIMD vectors the size of the result matrix’s
+                                        (column size / 4). I first created a naive solution without SIMD and openMP, and it came out to produce a ~15x
+                                        speedup which was pretty bad, but then after a long time I was able to figure out how to convert the structure using
+                                        SIMD.
+                                        With this I got ~45x speed, and then I used openMP and parallelized the outermost loop and was able to get a ~65x
+                                        speedup.
+                                        Then, I unrolled the innermost loop a little more, which proved to be difficult, and I was able to reach a ~98x
+                                        speedup.
+                                    </span> <br>
+                                    
+                                    <span>
+                                        Then for power, I was aware that there was a O(log(n)) solution for normal exponentiation (e.g. x^y), so I tried to
+                                        replicate that using matrices. This was quite difficult because I needed to create a lot of different temporary
+                                        matrices
+                                        to store values, but eventually I figured out how to create a solution that is most likely O(log(n) * n^3) using the
+                                        previous matrix multiplication function that was explained.
+                                    </span><br>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -554,43 +601,27 @@
         </div>
     </section>
 
-    <h2>Modal Example</h2>
-
-    <!-- Trigger/Open The Modal -->
-    <button id="myBtn">Open Modal</button>
-
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-
-        <!-- Modal content -->
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <p>Some text in the Modal..</p>
-        </div>
-
-    </div>
-
     <!-- footer
         ================================================== -->
-    <footer>
+    <footer style="margin-top: 100px;">
     
-        <div class="row" style="margin-top: 50px;">
+        <div class="row">
     
-            <div class="twelve columns">
     
-                <ul class="social-links">
-                    <li><a href="https://www.linkedin.com/in/yousef-alshinnawi/" target="_blank"><i
-                                class="fa fa-linkedin"></i></a></li>
-                    <li><a href="https://github.com/yalshinnawi" target="_blank"> <i class="fa fa-github"></i></a></li>
-                </ul>
-            </div>
+            <ul class="social-links">
+                <li><a href="https://www.linkedin.com/in/yousef-alshinnawi/" target="_blank"><i
+                            class="fa fa-linkedin"></i></a></li>
+                <li><a href="https://github.com/yalshinnawi" target="_blank"> <i class="fa fa-github"></i></a></li>
+            </ul>
     
             <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#projects"><i class="icon-up-open"></i></a></div>
     
         </div>
     
     </footer> 
+
     <!-- Footer End-->
+
     <script>
         var myVideo = document.getElementById("roboticsVideo")
 
@@ -601,19 +632,9 @@
                 myVideo.pause();
         }
     </script>
-    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
-    <!-- <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
-    <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script> -->
-
-    <!-- <script>window.jQuery || document.write('<script src="https://code.jquery.com/jquery-3.5.1.min.js">')</script> -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-3.3.2.min.js"></script>
-    
-    <!-- <script src="js/jquery.flexslider.js"></script> -->
     <script src="js/waypoints.js"></script>
-    <!-- <script src="js/waypoint.js"></script> -->
-    <!-- <script src="js/jquery.fittext.js"></script> -->
-    <!-- <script src="js/magnific-popup.js"></script> -->
     <script src="js/initProjects.js"></script>
 
 
@@ -621,14 +642,17 @@
         // Get the modal
         var modal = document.getElementById("myModal");
         var idexModal = document.getElementById("IDEXModal");
+        var memwbModal = document.getElementById("MEMWBModal");
 
         // Get the button that opens the modal
         var btn = document.getElementById("myBtn");
-        var idexBtn = document.getElementById("idexBtn")
+        var idexBtn = document.getElementById("idexBtn");
+        var memwbBtn = document.getElementById("memwbBtn");
 
         // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
+        var span = document.getElementsByClassName("IFClose")[0];
         var idexSpan = document.getElementsByClassName("IDEXClose")[0];
+        var memwbSpan = document.getElementsByClassName("MEMWBClose")[0];
 
         // When the user clicks the button, open the modal 
         btn.onclick = function () {
@@ -637,6 +661,9 @@
         idexBtn.onclick = function () {
             idexModal.style.display = "block";
         }
+        memwbBtn.onclick = function () {
+            memwbModal.style.display = "block";
+        }
         // When the user clicks on <span> (x), close the modal
         span.onclick = function () {
             modal.style.display = "none";
@@ -644,13 +671,10 @@
         idexSpan.onclick = function() {
             idexModal.style.display = "none";
         }
+        memwbSpan.onclick = function () {
+            memwbModal.style.display = "none";
+        }
 
-        // // When the user clicks anywhere outside of the modal, close it
-        // window.onclick = function (event) {
-        //     if (event.target != modal) {
-        //         modal.style.display = "none";
-        //     }
-        // }
     </script>
 </body>
 </html>
