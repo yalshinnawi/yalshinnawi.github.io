@@ -176,18 +176,27 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <img src="images/EECS151DataPath-IF Stage.jpg" alt="IF Stage" class="centerImage">
-                                <button id="myBtn">
+                                <button id="myBtn" class="stageButtons">
                                     Enlarge
                                 </button>
                                 <div id="myModal" class="modal">
                                     <div class="modal-content">
                                         <span class="close">&times</span>
-                                        <img src="images/EECS151DataPath-IF Stage.jpg" alt="Zoomed In IFStage" class="IFStageZoom">
+                                        <img src="images/EECS151DataPath-IF Stage.jpg" alt="Zoomed In IF Stage" class="IFStageZoom" >
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <img src="images/EECS151DataPath-IDEX Stage.jpg" alt="IDEX Stage" class="centerImage">
+                                <button id="idexBtn" class="stageButtons">
+                                    Enlarge
+                                </button>
+                                <div id="IDEXModal" class="modal">
+                                    <div class="modal-content">
+                                        <span class="IDEXClose">&times</span>
+                                        <img src="images/EECS151DataPath-IDEX Stage.jpg" alt="Zoomed In IDEX Stage" class="IFStageZoom">
+                                    </div>
+                                </div>
                             </div>
                         
                             <div class="col-md-4">
@@ -611,21 +620,29 @@
     <script>
         // Get the modal
         var modal = document.getElementById("myModal");
+        var idexModal = document.getElementById("IDEXModal");
 
         // Get the button that opens the modal
         var btn = document.getElementById("myBtn");
+        var idexBtn = document.getElementById("idexBtn")
 
         // Get the <span> element that closes the modal
         var span = document.getElementsByClassName("close")[0];
+        var idexSpan = document.getElementsByClassName("IDEXClose")[0];
 
         // When the user clicks the button, open the modal 
         btn.onclick = function () {
             modal.style.display = "block";
         }
-
+        idexBtn.onclick = function () {
+            idexModal.style.display = "block";
+        }
         // When the user clicks on <span> (x), close the modal
         span.onclick = function () {
             modal.style.display = "none";
+        }
+        idexSpan.onclick = function() {
+            idexModal.style.display = "none";
         }
 
         // // When the user clicks anywhere outside of the modal, close it

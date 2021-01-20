@@ -223,7 +223,7 @@ ul#nav li.current a {
 }
 
 #projects .projectButton {
-  width: 950px;
+  width: 100%;
   transition-duration: 0.4s;
   background-color: #1b3850;
   color: #d6f7ff;
@@ -281,28 +281,50 @@ ul#nav li.current a {
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 60%;
 }
 
-#projects .close {
+#projects .close,
+.IDEXClose {
   color: rgb(209, 8, 8);
   float: right;
   font-size: 50px;
   font-weight: bold;
 }
 
-#project .close:hover,
-.close:focus {
+#projects .close:hover,
+.close:focus,
+.IDEXClose:hover,
+.IDEXClose:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
 }
 
-#project .IFStageZoom {
-  width: 200px;
-  height: 800px;
+#projects .IFStageZoom {
+  width: 100%;
+  height: auto;
   display: block;
   margin: auto;
+}
+
+#projects .stageButtons {
+  width: 80%;
+  display: block;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  transition-duration: 0.4s;
+  background-color: #1b3850;
+  color: #d6f7ff;
+  font: "opensans-bold", sans-serif;
+  font-size: 11px;
+}
+
+#projects .stageButtons:hover {
+  background-color: #1b3850;
+  font: "opensans-bold", sans-serif;
+  font-size: 14px;
 }
 
 /* ------------------------------------------------------------------ */
