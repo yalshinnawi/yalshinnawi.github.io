@@ -353,7 +353,7 @@ ul#nav li.current a { color: #F06000; }
    position: relative;
   	margin-bottom: 60px;
   	background: #ccc;
-  	height: 42px;
+  	height: 20px;
   	border-radius: 3px;
 }
 .bars li em {
@@ -374,8 +374,8 @@ ul#nav li.current a { color: #F06000; }
    padding-right: 24px;
   	background: #313131;
    display: inline-block;
-  	height: 42px;
-   line-height: 42px;
+  	height: 20px;
+   line-height: 20px;
    border-radius: 3px 0 0 3px;
 }
 
@@ -395,9 +395,14 @@ ul#nav li.current a { color: #F06000; }
   	-webkit-animation: verilog 2s ease;
 }
 .c {
-  	width: 50%;
+  	width: 80%;
   	-moz-animation: c 2s ease;
   	-webkit-animation: c 2s ease;
+}
+.cplus {
+   width: 60%;
+   -moz-animation: cplus 2s ease;
+  	-webkit-animation: cplus 2s ease;
 }
 .css {
   	width: 70%;
@@ -414,6 +419,11 @@ ul#nav li.current a { color: #F06000; }
   	-moz-animation: git 2s ease;
   	-webkit-animation: git 2s ease;
 }
+.go {
+   width: 80%;
+  	-moz-animation: go 2s ease;
+  	-webkit-animation: go 2s ease;
+}
 
 @-moz-keyframes java {
   0%   { width: 0px;  }
@@ -429,7 +439,11 @@ ul#nav li.current a { color: #F06000; }
 }
 @-moz-keyframes c {
   0%   { width: 0px;  }
-  100% { width: 50%;  }
+  100% { width: 80%;  }
+}
+@-moz-keyframes cplus {
+  0%   { width: 0px;  }
+  100% { width: 60%;  }
 }
 @-moz-keyframes css {
   0%   { width: 0px;  }
@@ -443,6 +457,10 @@ ul#nav li.current a { color: #F06000; }
 @-moz-keyframes git {
   0%   { width: 0px;  }
   100% { width: 90%;  }
+}
+@-moz-keyframes go {
+  0%   { width: 0px;  }
+  100% { width: 80%;  }
 }
 
 @-webkit-keyframes java {
@@ -459,7 +477,11 @@ ul#nav li.current a { color: #F06000; }
 }
 @-webkit-keyframes c {
   0%   { width: 0px;  }
-  100% { width: 50%;  }
+  100% { width: 80%;  }
+}
+@-webkit-keyframes cplus {
+  0%   { width: 0px;  }
+  100% { width: 60%;  }
 }
 @-webkit-keyframes css {
   0%   { width: 0px;  }
@@ -473,7 +495,10 @@ ul#nav li.current a { color: #F06000; }
   0%   { width: 0px;  }
   100% { width: 90%;  }
 }
-
+@-webkit-keyframes go {
+  0%   { width: 0px;  }
+  100% { width: 80%;  }
+}
 /* ------------------------------------------------------------------ */
 /* e. Portfolio Section
 /* ------------------------------------------------------------------ */
