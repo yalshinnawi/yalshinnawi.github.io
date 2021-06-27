@@ -82,6 +82,43 @@
             <button class="projectButton" data-toggle="collapse" data-target="#secureFileSys">
                 Show More
             </button>
+            <div id="secureFileSys" class="panel collapse">
+                <div class="longParagraphContainer">
+                    <p class="paragraphDefault">
+                        <span class="spanFormat">
+                            In this project there were 4 main components. The Keystore, Datastore, malicious users, and user communication.
+                            The Keystore is a trusted service hosted on a server and network to which the adversary does not have access. 
+                            No adversary will be able to maliciously overwrite, modify, or otherwise tamper with any key-value entry stored on the Keystore server.
+                            The Datastore is an untrusted service hosted on a server and network controlled by an adversary. The adversary can view and record the content and metadata of all requests (set/get/delete) to the Datastore API. This allows the adversary to know who stored which key-value entry, when, and what the contents is.
+                        </span><br>
+                    
+                        <span class="spanFormat">
+                            These structures are used for sharing files between users, and after a user shares a file with another user via ShareFile(), the sender will share the resulting accessToken with the recipient via a chat app that uses insecure HTTP. Therefore, the adversary can execute a MiTM attack to record and modify messages, including accessTokens, that users send to each other. However, the adversary does not execute any Denial of Service (DoS) style attacks that prevent (potentially modified) messages from eventually being delivered to the intended recipient.
+                        </span><br>
+
+                        <span class="spanFormat">
+                            My task was to create a secure file system using the Datastore and Keystore APIs to
+                            allow users to safely share/revoke files with each other without an adversary tampering with their data.
+                            I implemented the following functions and secured all communication using cryptographic primatives.
+                        </span><br>
+
+                        <ol class="olIntroSecure">
+                            <li>InitUser: Create a user account.</li>
+                            <li>GetUser: Log in using username and password.</li>
+                            <li>User.StoreFile: Store user files.</li>
+                            <li>User.LoadFile: Load user files.</li>
+                            <li>User.AppendFile: Efficiently append data to an existing file.</li>
+                            <li>User.ShareFile: Create a secure file share invitation</li>
+                            <li>User.ReceiveFile: Add a shared file to personal file namespace</li>
+                            <li>User.RevokeFile: Revoke file access</li>
+                        </ol>
+
+                        <span>
+                            Additional information can be found here: <a href="https://sp21.cs161.org/proj2/" target="_blank">CS161 Project 2</a>
+                        </span>
+                    </p>
+                </div>
+            </div>
         </div>
 
 
@@ -111,7 +148,7 @@
                                     and receive data.
                                 </span><br>
 
-                                <span>
+                                <span class="spanFormat"> 
                                     An on-chip Universial Asynchronous Reciever-Transmitter (UART) using the technique of Memory
                                     Mapped IO
                                     (MMIO) was to be implemented to send and receive bytes using RISC-V load and store instructions. This interface
@@ -256,6 +293,9 @@
                         <div class="YogaContainer">
                             <div>
                                 <img class="EECS106AOverViewPic" src="images/RoboticsCoverPic.png" alt="Baxter w/ HumanBot">
+                                <!-- <figcaption class="EECS106APicCap">
+                                    Baxter Robot and the HumanBot Model
+                                </figcaption> -->
                             </div>
                             <p class="YogaParagraphIntro">
                                 <span class="spanFormat">
@@ -283,9 +323,6 @@
                                     human participant.
                                 </span>
                             </p>
-                            <figcaption class="EECS106APicCap">
-                                Baxter Robot and the HumanBot Model
-                            </figcaption>
                         </div>
                     </div>
                 </div>

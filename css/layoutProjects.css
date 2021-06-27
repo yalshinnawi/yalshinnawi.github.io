@@ -208,14 +208,14 @@ a:hover {
 }
 
 #projects .panelHeaderIntro {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 24px;
   /* text-align: justify; */
   margin: 0 auto;
 }
 
 #projects .container {
-  max-width: 920px;
+  max-width: 48vw;
 }
 
 /* Pictures */
@@ -224,8 +224,8 @@ a:hover {
   float: right;
   margin-bottom: 5px;
   margin-left: 20px;
-  height: 290px;
-  width: 550px;
+  height: 30vh;
+  width: 30vw;
   /* border-radius: 25px;
   border: 2px solid #000; */
 }
@@ -234,7 +234,7 @@ a:hover {
   float: right;
   margin-top: 3px;
   margin-bottom: 0px;
-  width: 550px;
+  width: 30vw;
   text-align: center;
   font: sans-serif;
   font-size: 13px;
@@ -253,6 +253,7 @@ a:hover {
 }
 
 #projects .EECS106APicCap {
+  position: bottom;
   margin-top: -10px;
   width: 400px;
   text-align: center;
@@ -405,11 +406,11 @@ a:hover {
 
 #projects .YogaContainer {
   margin-top: 4px;
-  max-width: 1000px;
+  max-width: 48vw;
 }
 
 #projects .YogaParagraphIntro {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 24px;
   /* text-align: justify; */
 }
@@ -459,6 +460,11 @@ a:hover {
 
 #projects .olIntro {
   font-size: 16px;
+  line-height: 24px;
+}
+
+#projects .olIntroSecure {
+  font-size: 14px;
   line-height: 24px;
 }
 
