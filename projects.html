@@ -269,17 +269,26 @@
                         </div>
                         <div class="project-action-links">
                             <a href="https://github.com/yalshinnawi/voxel_3d_voidfall_dredge" target="_blank" class="project-btn secondary"><i class="fa fa-github"></i> View GitHub Repository</a>
+                            <a href="#voidfall-gameplay-video" class="project-btn outline"><i class="fa fa-play-circle"></i> Watch Gameplay Video</a>
                         </div>
                     </div>
                 </div>
-                <button class="project-accordion-toggle" type="button">
-                    <span>Engine Architecture &amp; Graphics Pipeline</span>
+                <button class="project-accordion-toggle" type="button" id="voidfall-gameplay-video">
+                    <span>Engine Architecture, Gameplay Video &amp; Pipeline</span>
                     <i class="fa fa-chevron-down toggle-icon"></i>
                 </button>
                 <div class="project-accordion-content">
                     <p>
                         Built entirely from scratch without commercial engines, <em>Voidfall: Dredge</em> bridges low-level memory-packed voxel architectures with modern graphics pipelines and client-server multiplayer synchronization:
                     </p>
+                    <div class="video-responsive-container">
+                        <video controls poster="images/voxel_3d_gameplay.png" preload="metadata" style="width: 100%; height: 100%;">
+                            <source src="videos/voidfall_gameplay.mp4" type="video/mp4">
+                            <source src="videos/voidfall_gameplay.webm" type="video/webm">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <p class="media-caption">Voidfall: Dredge — In-Engine Real-Time Gameplay &amp; Cavern Extraction Demo</p>
                     <ol>
                         <li><strong>High-Density Voxel Memory Architecture:</strong> 32x32x32 chunk hierarchies with 16-bit packed voxel memory layout (<code>uint8_t material_id</code>, <code>uint8_t flags_and_damage</code>). Bit-packed 8-byte vertex formatting with greedy meshing and ambient occlusion.</li>
                         <li><strong>Procedural Cavern &amp; World Generation:</strong> Multi-octave 3D Simplex noise generating deep subterranean cavern networks, radioactive hazard zones, volcanic fissures, and sealed industrial vaults.</li>
