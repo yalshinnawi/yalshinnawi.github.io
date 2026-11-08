@@ -38,11 +38,26 @@ jQuery(document).ready(function($) {
    /* Dynamic Hero Height
    ------------------------------------------------------ */
    function setHeroHeight() {
-       var winH = $(window).height();
-       $('#projects-hero').css({ 'height': winH });
+       if ($(window).width() > 768) {
+           var winH = $(window).height();
+           $('#projects-hero').css({ 'height': winH });
+       } else {
+           $('#projects-hero').css({ 'height': 'auto' });
+       }
    }
    setHeroHeight();
    $(window).on('resize', setHeroHeight);
+
+   /*----------------------------------------------------*/
+   /* Close mobile nav on click outside
+   ------------------------------------------------------ */
+   $(document).on('click', function(e) {
+       if ($(window).width() <= 768 && window.location.hash === '#nav-wrap') {
+           if (!$(e.target).closest('#nav-wrap').length) {
+               window.location.hash = '';
+           }
+       }
+   });
 
    /*----------------------------------------------------*/
    /* Navbar Fade In/Out on Scroll

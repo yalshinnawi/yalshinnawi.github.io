@@ -32,6 +32,15 @@
 	    });
 	});
 
+   /* Close mobile nav on click outside */
+   $(document).on('click', function(e) {
+       if ($(window).width() <= 768 && window.location.hash === '#nav-wrap') {
+           if (!$(e.target).closest('#nav-wrap').length) {
+               window.location.hash = '';
+           }
+       }
+   });
+
 
 /*----------------------------------------------------*/
 /* Highlight the current section in the navigation bar

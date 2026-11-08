@@ -651,13 +651,130 @@ footer .social-links li a:hover {
 }
 
 @media only screen and (max-width: 767px) {
+  /* Mobile Navigation Top Bar */
+  #nav-wrap {
+    background: rgba(31, 32, 36, 0.96) !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 52px;
+    z-index: 1000;
+  }
+  #nav-wrap > a.mobile-btn {
+    display: block !important;
+    width: 40px !important;
+    height: 40px !important;
+    background-color: #f06000 !important;
+    border-radius: 4px !important;
+    position: absolute !important;
+    top: 6px !important;
+    right: 18px !important;
+    float: none !important;
+    border: none;
+    font: 0/0 a;
+    color: transparent;
+  }
+  #nav-wrap > a:before,
+  #nav-wrap > a:after {
+    position: absolute;
+    border: 1.5px solid #fff;
+    top: 35%;
+    left: 22%;
+    right: 22%;
+    content: '';
+    transition: all 0.2s ease;
+  }
+  #nav-wrap > a:after { top: 60%; }
+  #nav-wrap:target > a:last-of-type:before {
+    top: 48%;
+    transform: rotate(45deg);
+  }
+  #nav-wrap:target > a:last-of-type:after {
+    top: 48%;
+    transform: rotate(-45deg);
+  }
+  #nav-wrap:not(:target) > a:first-of-type,
+  #nav-wrap:target > a:last-of-type {
+    display: block !important;
+  }
+  #nav-wrap ul#nav {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 52px;
+    left: 0;
+    right: 0;
+    margin: 0;
+    background: #1f2024;
+    padding: 10px 24px 24px 24px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    border-top: 1px solid #2d2e34;
+  }
+  #nav-wrap:target > ul#nav {
+    display: block !important;
+  }
+  ul#nav li {
+    display: block !important;
+    height: auto !important;
+    text-align: left !important;
+    border-bottom: 1px dotted #2d2e34 !important;
+  }
+  ul#nav li a {
+    display: block !important;
+    padding: 12px 6px !important;
+    font-size: 13px !important;
+  }
+
+  /* Projects Hero & Content */
+  #projects-hero {
+    height: auto !important;
+    min-height: 520px;
+    padding-top: 52px;
+  }
+  #projects-hero .banner {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
   #projects-hero .banner-text h1 {
-    font-size: 48px;
+    font-size: 46px;
+    line-height: 1.15em;
   }
   #projects-hero .banner-text h3 {
     font-size: 15px;
     width: 90%;
   }
+  #projects-hero .scrolldown {
+    display: none;
+  }
+
+  /* Swipeable Pill Filter Carousel */
+  .filter-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 8px;
+    padding: 4px 6px 14px 6px;
+    margin-bottom: 30px;
+    justify-content: flex-start;
+  }
+  .filter-container::-webkit-scrollbar {
+    display: none;
+  }
+  .filter-btn {
+    flex: 0 0 auto;
+    font-size: 11px;
+    padding: 8px 14px;
+    white-space: nowrap;
+  }
+
+  /* Project Cards on Mobile */
   .project-card-header {
     flex-direction: column;
     padding: 18px 20px 12px 20px;
@@ -670,11 +787,48 @@ footer .social-links li a:hover {
   .project-card-body {
     padding: 18px 20px;
   }
+  .project-btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
   .project-accordion-toggle {
     padding: 12px 20px;
   }
   .project-accordion-content {
     padding: 18px 20px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .projects-section-header h2 {
+    font-size: 16px !important;
+    letter-spacing: 1px !important;
+  }
+  #projects-hero .banner-text h1 {
+    font-size: 34px !important;
+    line-height: 1.15em !important;
+    margin: 0 auto 16px auto;
+  }
+  #projects-hero .banner-text h3 {
+    font-size: 13.5px !important;
+    line-height: 1.8em !important;
+    width: 92%;
+  }
+  .project-title {
+    font-size: 19px !important;
+    line-height: 26px !important;
+  }
+  .project-tech-tags {
+    gap: 5px;
+    margin-bottom: 16px;
+  }
+  .tech-tag {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+  .category-divider h3 {
+    font-size: 15px;
   }
 }
 
