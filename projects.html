@@ -13,20 +13,27 @@
     <link rel="stylesheet" href="css/layoutProjects.css">
     <link rel="stylesheet" href="css/media-queries.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="shortcut icon" href="images/ProfPic.jpg" type="image/x-icon">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     
     <!---Scripts -->
     <script src="js/modernizr.js"></script>
-    <!-- <script src="js/modal.js"></script> -->
-    
-    <script src="http://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
-    <!-- Latest compiled JavaScript -->
+    <script>
+        (function($) {
+            if ($) {
+                var origLoad = $.fn.load;
+                $.fn.load = function(url) {
+                    if (typeof url === 'function') {
+                        return this.on('load', url);
+                    }
+                    return origLoad ? origLoad.apply(this, arguments) : this;
+                };
+            }
+        })(jQuery);
+    </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
 
 </head>
 
@@ -40,10 +47,10 @@
             <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
 
             <ul id="nav" class="nav">
-                <li>
-                    <a class="current" href="projects.html">Projects</a>
-                </li>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#resume">Resume</a></li>
+                <li class="current"><a href="projects.html">Projects</a></li>
             </ul> <!-- end #nav -->
 
             
@@ -60,7 +67,240 @@
             </div>
         </div>
 
-        <div class="panel panel-default center-block" style="width: 50%">
+        <!-- ==============================================
+             RECENT FULL-STACK & SYSTEMS PROJECTS
+             ============================================== -->
+
+        <!-- 1. EquityPulse -->
+        <div class="panel panel-default center-block">
+            <div class="panel-heading text-center">
+                <h3 class="panelTitles">
+                    EquityPulse — Personal Wealth Operating System
+                </h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <img src="images/equitypulse.png" alt="EquityPulse Wealth Tracker Dashboard" class="projectShowcaseImg">
+                        <div class="projectBadgeContainer">
+                            <span class="projectBadge">Next.js / React</span>
+                            <span class="projectBadge">TypeScript</span>
+                            <span class="projectBadge">Web Cryptography (PBKDF2/HMAC)</span>
+                            <span class="projectBadge">Zero-Knowledge Isolation</span>
+                            <span class="projectBadge">Tailwind CSS</span>
+                        </div>
+                        <p class="panelHeaderIntro">
+                            <span class="spanFormat">
+                                <strong>EquityPulse</strong> is a privacy-first wealth operating system and portfolio tracking platform designed to give individuals complete visibility into their net worth, multi-asset investments, and dividend projections without sacrificing their financial data privacy. Built with client-side zero-knowledge architecture, statements and telemetry are sanitized and encrypted before ever persisting.
+                            </span>
+                        </p>
+                        <div class="projectLinksBar">
+                            <a href="https://equitypulse.pro/" target="_blank" class="liveDemoLink"><i class="fa fa-external-link"></i> Launch EquityPulse (equitypulse.pro)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="projectButton" data-toggle="collapse" data-target="#equityPulseTab">
+                Show More
+            </button>
+            <div id="equityPulseTab" class="panel collapse">
+                <div class="longParagraphContainer">
+                    <p class="paragraphDefault">
+                        <span class="spanFormat">
+                            Traditional net worth apps require handing over banking credentials and plaintext financials to third parties. EquityPulse was created as a zero-knowledge personal finance engine where the client is completely in control of their private ledger.
+                        </span><br>
+                        <span class="spanFormat">
+                            Key architecture and technical highlights:
+                        </span><br>
+                        <ol class="olIntroSecure">
+                            <li><strong>Zero-Knowledge Cryptographic Vault:</strong> Uses client-side PBKDF2 key derivation with 100,000 salt iterations and tamper-proof HMAC tokens, ensuring financial numbers never leave the user's session unencrypted.</li>
+                            <li><strong>Local In-Memory Sanitization:</strong> Financial statement upload parser runs in-memory to automatically mask account numbers and personally identifiable information (PII) before deriving transactions and holdings.</li>
+                            <li><strong>Live Financial Intelligence:</strong> Real-time price tracking, automated dividend yield modeling, asset allocation breakdowns, and long-term net worth forecast simulations.</li>
+                            <li><strong>Session Isolation &amp; Security:</strong> Strict session boundary enforcement preventing leakage or cross-session tracking.</li>
+                        </ol>
+                        <span>
+                            Live Platform: <a href="https://equitypulse.pro/" target="_blank">equitypulse.pro</a>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Armenia Real Estate Hub -->
+        <div class="panel panel-default center-block">
+            <div class="panel-heading text-center">
+                <h3 class="panelTitles">
+                    Armenia Real Estate Hub — Multi-Platform Property Aggregator
+                </h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <img src="images/armeniarealestatehub.png" alt="Armenia Real Estate Hub Property Portal" class="projectShowcaseImg">
+                        <div class="projectBadgeContainer">
+                            <span class="projectBadge">Next.js</span>
+                            <span class="projectBadge">TypeScript</span>
+                            <span class="projectBadge">Distributed Scraping &amp; Ingestion</span>
+                            <span class="projectBadge">Currency Normalization</span>
+                            <span class="projectBadge">Tailwind CSS</span>
+                        </div>
+                        <p class="panelHeaderIntro">
+                            <span class="spanFormat">
+                                I built <strong>Armenia Real Estate Hub</strong> out of personal necessity. Searching for homes in Armenia was notoriously fragmented across scattered channels—Telegram groups, List.am, Facebook groups, and broker pages. Because my wife is Armenian and we regularly search for homes in Armenia, I built a unified real estate discovery platform that aggregates over 3,600+ listings into a centralized, searchable interface with localized currency exchange and price per m² metrics.
+                            </span>
+                        </p>
+                        <div class="projectLinksBar">
+                            <a href="https://armeniarealestatehub.homes/" target="_blank" class="liveDemoLink"><i class="fa fa-external-link"></i> Launch Armenia Real Estate Hub (armeniarealestatehub.homes)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="projectButton" data-toggle="collapse" data-target="#armeniaHubTab">
+                Show More
+            </button>
+            <div id="armeniaHubTab" class="panel collapse">
+                <div class="longParagraphContainer">
+                    <p class="paragraphDefault">
+                        <span class="spanFormat">
+                            Finding housing in Armenia traditionally meant monitoring dozens of separate Telegram channels, scrolling through unindexed Facebook groups, and translating disparate formats with varying currencies (AMD, USD, RUB). Armenia Real Estate Hub bridges this gap with an automated ingestion and aggregation engine.
+                        </span><br>
+                        <span class="spanFormat">
+                            Key features and technical implementation:
+                        </span><br>
+                        <ol class="olIntroSecure">
+                            <li><strong>Multi-Channel Ingestion Pipeline:</strong> Continuous ingestion pipelines monitoring Telegram channels, List.am, Facebook groups, and MyRealty, deduplicating repetitive listings and parsing raw text into structured attributes.</li>
+                            <li><strong>Dynamic Currency &amp; Metric Normalization:</strong> Live exchange rate engine converting between AMD (֏), USD ($), and Rubles (₽), calculating standard price per square meter ($/m²) for objective comparison.</li>
+                            <li><strong>District-Level &amp; Property Filtering:</strong> Granular filtering across Yerevan districts (Kentron, Arabkir, Malatia-Sebastia, etc.) by room count, square footage, building floor, and zoning (residential vs. commercial).</li>
+                            <li><strong>Direct Landlord / Broker Reach:</strong> Direct one-click WhatsApp and Telegram action buttons linked to the original verified source post.</li>
+                        </ol>
+                        <span>
+                            Live Website: <a href="https://armeniarealestatehub.homes/" target="_blank">armeniarealestatehub.homes</a>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. HouseHunter (Bay Area) -->
+        <div class="panel panel-default center-block">
+            <div class="panel-heading text-center">
+                <h3 class="panelTitles">
+                    HouseHunter — Collaborative Bay Area Home &amp; Commute Analytics
+                </h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <img src="images/househunter_bayarea.png" alt="HouseHunter Bay Area Search Platform" class="projectShowcaseImg">
+                        <div class="projectBadgeContainer">
+                            <span class="projectBadge">Node.js</span>
+                            <span class="projectBadge">Express</span>
+                            <span class="projectBadge">Real-Time Sync</span>
+                            <span class="projectBadge">Commute &amp; Crime Analytics</span>
+                            <span class="projectBadge">Fly.io</span>
+                        </div>
+                        <p class="panelHeaderIntro">
+                            <span class="spanFormat">
+                                Hunting for homes in San Francisco and the Bay Area with my wife proved how tricky it is to balance list price against real-world factors: peak-hour commute times into the city, neighborhood crime ratings, and hidden HOA fees. I created <strong>HouseHunter</strong> as a collaborative property decision engine built for couples and families to evaluate, compare, and bookmark homes together.
+                            </span>
+                        </p>
+                        <div class="projectLinksBar">
+                            <a href="https://housesearcher-bayarea.fly.dev/" target="_blank" class="liveDemoLink"><i class="fa fa-external-link"></i> Launch HouseHunter (housesearcher-bayarea.fly.dev)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="projectButton" data-toggle="collapse" data-target="#houseHunterTab">
+                Show More
+            </button>
+            <div id="houseHunterTab" class="panel collapse">
+                <div class="longParagraphContainer">
+                    <p class="paragraphDefault">
+                        <span class="spanFormat">
+                            Traditional real estate portals focus strictly on bed/bath numbers and list prices, ignoring the daily realities of living in the Bay Area. HouseHunter puts commute logistics, neighborhood safety, and total cost of ownership at the forefront.
+                        </span><br>
+                        <span class="spanFormat">
+                            Key features and technical architecture:
+                        </span><br>
+                        <ol class="olIntroSecure">
+                            <li><strong>Multiplayer Collaborative Sessions:</strong> Lightweight shared 6-character room codes and PIN access allowing partners to synchronously rate, comment, and prioritize prospective homes together.</li>
+                            <li><strong>SF Transit &amp; Commute Calculation:</strong> Real-time commute estimations factoring in traffic conditions, BART / Caltrain proximity, and travel duration into San Francisco hubs.</li>
+                            <li><strong>Neighborhood Safety &amp; Crime Profiling:</strong> Integrates localized safety and crime rate metrics to evaluate street and neighborhood quality.</li>
+                            <li><strong>True Cost of Ownership Analysis:</strong> Computes true monthly expenditure by compounding list price, mortgage interest, property tax rates, and monthly HOA fees.</li>
+                        </ol>
+                        <span>
+                            Live App: <a href="https://housesearcher-bayarea.fly.dev/" target="_blank">housesearcher-bayarea.fly.dev</a>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Voidfall: Dredge (3D Voxel Game Engine) -->
+        <div class="panel panel-default center-block">
+            <div class="panel-heading text-center">
+                <h3 class="panelTitles">
+                    Voidfall: Dredge — 3D Voxel Action Game &amp; Custom Engine
+                </h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <img src="images/voxel_3d_gameplay.png" alt="Voidfall: Dredge Gameplay and HUD" class="projectShowcaseImg">
+                        <div class="projectBadgeContainer">
+                            <span class="projectBadge">C++20</span>
+                            <span class="projectBadge">OpenGL 4.5 Core Profile</span>
+                            <span class="projectBadge">GLSL Shaders</span>
+                            <span class="projectBadge">Custom Voxel Pipeline</span>
+                            <span class="projectBadge">Multiplayer Architecture</span>
+                        </div>
+                        <p class="panelHeaderIntro">
+                            <span class="spanFormat">
+                                I've always had an interest in game development and graphics programming, which led me to build <strong>Voidfall: Dredge</strong>. It is a high-performance subterranean sci-fi voxel action game and custom engine built from scratch in modern <strong>C++20</strong> and <strong>OpenGL 4.5 Core Profile</strong>. Delvers descend into volatile planetary depths to extract Voidite crystals, breach sealed precursor vaults, survive radiation tremors, and defend extraction beacons.
+                            </span>
+                        </p>
+                        <div class="projectLinksBar">
+                            <a href="https://github.com/yalshinnawi/voxel_3d_voidfall_dredge" target="_blank" class="liveDemoLink"><i class="fa fa-github"></i> View GitHub Repository</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="projectButton" data-toggle="collapse" data-target="#voidfallTab">
+                Show More
+            </button>
+            <div id="voidfallTab" class="panel collapse">
+                <div class="longParagraphContainer">
+                    <p class="paragraphDefault">
+                        <span class="spanFormat">
+                            Built entirely from scratch without commercial game engines, <em>Voidfall: Dredge</em> bridges low-level memory-packed voxel architectures with modern graphics pipelines and client-server multiplayer synchronization.
+                        </span><br>
+                        <span class="spanFormat">
+                            Core engine and graphics features:
+                        </span><br>
+                        <ol class="olIntroSecure">
+                            <li><strong>High-Density Voxel Memory Architecture:</strong> 32x32x32 chunk hierarchies with 16-bit packed voxel memory layout (<code>uint8_t material_id</code>, <code>uint8_t flags_and_damage</code>). Bit-packed 8-byte vertex formatting with greedy meshing and ambient occlusion.</li>
+                            <li><strong>Procedural Cavern &amp; World Generation:</strong> Multi-octave 3D Simplex noise generating deep subterranean cavern networks, radioactive hazard zones, volcanic fissures, and sealed industrial vaults.</li>
+                            <li><strong>Dynamic Physics &amp; Voxel Destruction:</strong> AABB sweep collision detection with raycasted pneumatic drill destruction, real-time debris physics, and tactical flare illumination.</li>
+                            <li><strong>Atmospheric Subterranean Rendering:</strong> Volumetric distance fog, dynamic point light attenuation, glowing crystal shaders, and tactical radar sonar scanner effects.</li>
+                            <li><strong>Full Game Loop &amp; Audio DSP:</strong> Comprehensive mission cycle (Drop Pod &rarr; Mining Extraction &rarr; Defense &rarr; Debrief) with custom audio safety limiters and positional stereo sound.</li>
+                        </ol>
+                        <div style="margin-top: 15px; margin-bottom: 15px;">
+                            <img src="images/voxel_3d_montage.jpg" alt="Voidfall: Dredge 16-Phase Engine Architecture Montage" class="projectShowcaseImg">
+                            <figcaption class="arucoTagCap">Voidfall: Dredge — Complete Game Engine Phase Pipeline &amp; Systems Montage</figcaption>
+                        </div>
+                        <span>
+                            Source Code: <a href="https://github.com/yalshinnawi/voxel_3d_voidfall_dredge" target="_blank">github.com/yalshinnawi/voxel_3d_voidfall_dredge</a>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="sectionDividerTitle">
+            Systems &amp; Academic Projects
+        </div>
+
+        <div class="panel panel-default center-block">
             <div class="panel-heading text-center">
                 <h3 class="panelTitles">
                     Secure File System
@@ -122,7 +362,7 @@
         </div>
 
 
-        <div class="panel panel-default center-block" style="width: 50%">
+        <div class="panel panel-default center-block">
             <div class="panel-heading text-center">
                 <h3 class="panelTitles">
                     CPU Design
@@ -281,7 +521,7 @@
             </div>
         </div>
 
-        <div class="panel panel-default center-block" style="width: 50%">
+        <div class="panel panel-default center-block">
             <div class="panel-heading text-center">
                 <h1 class="panelTitles">
                     Yoga Pose Correction
@@ -471,7 +711,7 @@
             </div>
         </div>
 
-        <div class="panel panel-default center-block" style="width: 50%">
+        <div class="panel panel-default center-block">
             <div class="panel-heading text-center">
                 <h1 class="panelTitles">
                     Gitlet
@@ -570,7 +810,7 @@
             </div>
         </div>
 
-        <div class="panel panel-default center-block" style="width: 50%">
+        <div class="panel panel-default center-block">
             <div class="panel-heading text-center">
                 <h1 class="panelTitles">
                     NumC
@@ -579,24 +819,24 @@
             <div class="panel-body" >
                 <div class="row" style="margin-bottom: 15px;">
                     <div class="col-lg-6">
-                        <img src="images/NumC.png" alt="">
+                        <img src="images/NumC.png" alt="NumC logo" style="max-width: 100%; height: auto;">
                         <figcaption class="arucoTagCap">
                             Image Credit: <a href="https://commons.wikimedia.org/wiki/File:NumPy_logo.svg" target="_blank">NumPy logo </a>
                         </figcaption>
-                        
                     </div>
                         
-                    <div class="col-lg-6; YogaParagraphIntro" style="margin-top: 15px;">
+                    <div class="col-lg-6 YogaParagraphIntro" style="margin-top: 15px;">
                         <p>
                             In this project I implemented a slower version of numpy, called numc in the programming language C. Although the matrix multiplication and power operations are not as fast as numpy, they are still much better than the naive implementations via parallel programming using OpenMP and SIMD. This was a very difficult project, and required a lot of thought to get to the required speedup.
                         </p>
                     </div>
                 </div>
+            </div>
 
-                <button class="projectButton" data-toggle="collapse" data-target="#numcTab">
-                    Show More
-                </button>
-                <div id="numcTab" class="panel collapse">
+            <button class="projectButton" data-toggle="collapse" data-target="#numcTab">
+                Show More
+            </button>
+            <div id="numcTab" class="panel collapse">
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="longParagraphContainer">
@@ -672,12 +912,13 @@
     
         <div class="row">
     
-    
-            <ul class="social-links">
-                <li><a href="https://www.linkedin.com/in/yousef-alshinnawi/" target="_blank"><i
-                            class="fa fa-linkedin"></i></a></li>
-                <li><a href="https://github.com/yalshinnawi" target="_blank"> <i class="fa fa-github"></i></a></li>
-            </ul>
+            <div class="twelve columns">
+                <ul class="social-links">
+                    <li><a href="https://www.linkedin.com/in/yousef-alshinnawi/" target="_blank"><i
+                                class="fa fa-linkedin"></i></a></li>
+                    <li><a href="https://github.com/yalshinnawi" target="_blank"> <i class="fa fa-github"></i></a></li>
+                </ul>
+            </div>
     
             <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#projects"><i class="icon-up-open"></i></a></div>
     
@@ -697,9 +938,8 @@
                 myVideo.pause();
         }
     </script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-3.3.2.min.js"></script>
     <script src="js/waypoints.js"></script>
+    <script src="js/magnific-popup.js"></script>
     <script src="js/initProjects.js"></script>
 
 

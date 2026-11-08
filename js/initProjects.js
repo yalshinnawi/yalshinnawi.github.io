@@ -10,9 +10,11 @@
 /* FitText Settings
 ------------------------------------------------------ */
 
-    setTimeout(function() {
-	   $('h1.responsive-headline').fitText(1, { minFontSize: '40px', maxFontSize: '90px' });
-	 }, 100);
+   if ($.fn.fitText) {
+       setTimeout(function() {
+          $('h1.responsive-headline').fitText(1, { minFontSize: '40px', maxFontSize: '90px' });
+       }, 100);
+   }
 
 
 /*----------------------------------------------------*/
@@ -78,60 +80,53 @@
 ------------------------------------------------------*/
 
    $(window).on('scroll', function() {
-
-		var h = $('header').height();
-		var y = $(window).scrollTop();
+      var y = $(window).scrollTop();
       var nav = $('#nav-wrap');
 
-	   if ( (y > h*.20) && (y < h) && ($(window).outerWidth() > 768 ) ) {
-	      nav.fadeOut('fast');
-	   }
-      else {
-         if (y < h*.20) {
-            nav.removeClass('opaque').fadeIn('fast');
-         }
-         else {
-            nav.addClass('opaque').fadeIn('fast');
-         }
+      if (y > 20) {
+         nav.addClass('opaque');
+      } else {
+         nav.removeClass('opaque');
       }
-
-	});
+   });
 
 
 /*----------------------------------------------------*/
 /*	Modal Popup
 ------------------------------------------------------*/
 
-    $('.item-wrap a').magnificPopup({
+   if ($.fn.magnificPopup) {
+       $('.item-wrap a').magnificPopup({
+          type:'inline',
+          fixedContentPos: false,
+          removalDelay: 200,
+          showCloseBtn: false,
+          mainClass: 'mfp-fade'
+       });
 
-       type:'inline',
-       fixedContentPos: false,
-       removalDelay: 200,
-       showCloseBtn: false,
-       mainClass: 'mfp-fade'
-
-    });
-
-    $(document).on('click', '.popup-modal-dismiss', function (e) {
-    		e.preventDefault();
-    		$.magnificPopup.close();
-    });
+       $(document).on('click', '.popup-modal-dismiss', function (e) {
+       		e.preventDefault();
+       		$.magnificPopup.close();
+       });
+   }
 
 
 /*----------------------------------------------------*/
 /*	Flexslider
 /*----------------------------------------------------*/
-   $('.flexslider').flexslider({
-      namespace: "flex-",
-      controlsContainer: ".flex-container",
-      animation: 'slide',
-      controlNav: true,
-      directionNav: false,
-      smoothHeight: true,
-      slideshowSpeed: 7000,
-      animationSpeed: 600,
-      randomize: false,
-   });
+   if ($.fn.flexslider) {
+       $('.flexslider').flexslider({
+          namespace: "flex-",
+          controlsContainer: ".flex-container",
+          animation: 'slide',
+          controlNav: true,
+          directionNav: false,
+          smoothHeight: true,
+          slideshowSpeed: 7000,
+          animationSpeed: 600,
+          randomize: false,
+       });
+   }
 
 
 
