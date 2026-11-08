@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <!--- Basic Page Needs -->
     <meta charset="utf-8">
+    <title>Projects | Yousef Al-Shinnawi</title>
+    <meta name="description" content="Projects by Yousef Al-Shinnawi - Full-Stack Web Applications, Game Engines, Robotics, and Systems Architecture.">
+    <meta name="author" content="Yousef Al-Shinnawi">
 
-    <!---Mobile Specific Metas -->
+    <!--- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <!---CSS -->
+    <!--- CSS -->
     <link rel="stylesheet" href="css/default.css">
     <link rel="stylesheet" href="css/layoutProjects.css">
     <link rel="stylesheet" href="css/media-queries.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
     <link rel="shortcut icon" href="images/ProfPic.jpg" type="image/x-icon">
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    
-    <!---Scripts -->
+
+    <!--- Scripts -->
     <script src="js/modernizr.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
@@ -33,16 +33,14 @@
             }
         })(jQuery);
     </script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
 </head>
 
 <body>
-    <!--Header -->
-    <header id="project-header">
-
+    <!-- ==============================================
+         HERO HEADER (Cohesive with index.html)
+         ============================================== -->
+    <header id="projects-hero">
         <nav id="nav-wrap">
-
             <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
             <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
 
@@ -51,935 +49,546 @@
                 <li><a href="index.html#about">About</a></li>
                 <li><a href="index.html#resume">Resume</a></li>
                 <li class="current"><a href="projects.html">Projects</a></li>
-            </ul> <!-- end #nav -->
+            </ul>
+        </nav>
 
-            
-        </nav> <!-- end #nav-wrap -->
-
-    </header>
-    
-    <section id="projects">
-        <div class="container-fluid">
-            <div class="jumbotron text-center bg-primary">
-                <h1 class="projectsTitle">
-                    Projects
-                </h1>
-            </div>
-        </div>
-
-        <!-- ==============================================
-             RECENT FULL-STACK & SYSTEMS PROJECTS
-             ============================================== -->
-
-        <!-- 1. EquityPulse -->
-        <div class="panel panel-default center-block">
-            <div class="panel-heading text-center">
-                <h3 class="panelTitles">
-                    EquityPulse — Personal Wealth Operating System
-                </h3>
-            </div>
-            <div class="panel-body">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <img src="images/equitypulse.png" alt="EquityPulse Wealth Tracker Dashboard" class="projectShowcaseImg">
-                        <div class="projectBadgeContainer">
-                            <span class="projectBadge">Next.js / React</span>
-                            <span class="projectBadge">TypeScript</span>
-                            <span class="projectBadge">Web Cryptography (PBKDF2/HMAC)</span>
-                            <span class="projectBadge">Zero-Knowledge Isolation</span>
-                            <span class="projectBadge">Tailwind CSS</span>
-                        </div>
-                        <p class="panelHeaderIntro">
-                            <span class="spanFormat">
-                                <strong>EquityPulse</strong> is a privacy-first wealth operating system and portfolio tracking platform designed to give individuals complete visibility into their net worth, multi-asset investments, and dividend projections without sacrificing their financial data privacy. Built with client-side zero-knowledge architecture, statements and telemetry are sanitized and encrypted before ever persisting.
-                            </span>
-                        </p>
-                        <div class="projectLinksBar">
-                            <a href="https://equitypulse.pro/" target="_blank" class="liveDemoLink"><i class="fa fa-external-link"></i> Launch EquityPulse (equitypulse.pro)</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="projectButton" data-toggle="collapse" data-target="#equityPulseTab">
-                Show More
-            </button>
-            <div id="equityPulseTab" class="panel collapse">
-                <div class="longParagraphContainer">
-                    <p class="paragraphDefault">
-                        <span class="spanFormat">
-                            Traditional net worth apps require handing over banking credentials and plaintext financials to third parties. EquityPulse was created as a zero-knowledge personal finance engine where the client is completely in control of their private ledger.
-                        </span><br>
-                        <span class="spanFormat">
-                            Key architecture and technical highlights:
-                        </span><br>
-                        <ol class="olIntroSecure">
-                            <li><strong>Zero-Knowledge Cryptographic Vault:</strong> Uses client-side PBKDF2 key derivation with 100,000 salt iterations and tamper-proof HMAC tokens, ensuring financial numbers never leave the user's session unencrypted.</li>
-                            <li><strong>Local In-Memory Sanitization:</strong> Financial statement upload parser runs in-memory to automatically mask account numbers and personally identifiable information (PII) before deriving transactions and holdings.</li>
-                            <li><strong>Live Financial Intelligence:</strong> Real-time price tracking, automated dividend yield modeling, asset allocation breakdowns, and long-term net worth forecast simulations.</li>
-                            <li><strong>Session Isolation &amp; Security:</strong> Strict session boundary enforcement preventing leakage or cross-session tracking.</li>
-                        </ol>
-                        <span>
-                            Live Platform: <a href="https://equitypulse.pro/" target="_blank">equitypulse.pro</a>
-                        </span>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- 2. Armenia Real Estate Hub -->
-        <div class="panel panel-default center-block">
-            <div class="panel-heading text-center">
-                <h3 class="panelTitles">
-                    Armenia Real Estate Hub — Multi-Platform Property Aggregator
-                </h3>
-            </div>
-            <div class="panel-body">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <img src="images/armeniarealestatehub.png" alt="Armenia Real Estate Hub Property Portal" class="projectShowcaseImg">
-                        <div class="projectBadgeContainer">
-                            <span class="projectBadge">Next.js</span>
-                            <span class="projectBadge">TypeScript</span>
-                            <span class="projectBadge">Distributed Scraping &amp; Ingestion</span>
-                            <span class="projectBadge">Currency Normalization</span>
-                            <span class="projectBadge">Tailwind CSS</span>
-                        </div>
-                        <p class="panelHeaderIntro">
-                            <span class="spanFormat">
-                                I built <strong>Armenia Real Estate Hub</strong> out of personal necessity. Searching for homes in Armenia was notoriously fragmented across scattered channels—Telegram groups, List.am, Facebook groups, and broker pages. Because my wife is Armenian and we regularly search for homes in Armenia, I built a unified real estate discovery platform that aggregates over 3,600+ listings into a centralized, searchable interface with localized currency exchange and price per m² metrics.
-                            </span>
-                        </p>
-                        <div class="projectLinksBar">
-                            <a href="https://armeniarealestatehub.homes/" target="_blank" class="liveDemoLink"><i class="fa fa-external-link"></i> Launch Armenia Real Estate Hub (armeniarealestatehub.homes)</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="projectButton" data-toggle="collapse" data-target="#armeniaHubTab">
-                Show More
-            </button>
-            <div id="armeniaHubTab" class="panel collapse">
-                <div class="longParagraphContainer">
-                    <p class="paragraphDefault">
-                        <span class="spanFormat">
-                            Finding housing in Armenia traditionally meant monitoring dozens of separate Telegram channels, scrolling through unindexed Facebook groups, and translating disparate formats with varying currencies (AMD, USD, RUB). Armenia Real Estate Hub bridges this gap with an automated ingestion and aggregation engine.
-                        </span><br>
-                        <span class="spanFormat">
-                            Key features and technical implementation:
-                        </span><br>
-                        <ol class="olIntroSecure">
-                            <li><strong>Multi-Channel Ingestion Pipeline:</strong> Continuous ingestion pipelines monitoring Telegram channels, List.am, Facebook groups, and MyRealty, deduplicating repetitive listings and parsing raw text into structured attributes.</li>
-                            <li><strong>Dynamic Currency &amp; Metric Normalization:</strong> Live exchange rate engine converting between AMD (֏), USD ($), and Rubles (₽), calculating standard price per square meter ($/m²) for objective comparison.</li>
-                            <li><strong>District-Level &amp; Property Filtering:</strong> Granular filtering across Yerevan districts (Kentron, Arabkir, Malatia-Sebastia, etc.) by room count, square footage, building floor, and zoning (residential vs. commercial).</li>
-                            <li><strong>Direct Landlord / Broker Reach:</strong> Direct one-click WhatsApp and Telegram action buttons linked to the original verified source post.</li>
-                        </ol>
-                        <span>
-                            Live Website: <a href="https://armeniarealestatehub.homes/" target="_blank">armeniarealestatehub.homes</a>
-                        </span>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- 3. HouseHunter (Bay Area) -->
-        <div class="panel panel-default center-block">
-            <div class="panel-heading text-center">
-                <h3 class="panelTitles">
-                    HouseHunter — Collaborative Bay Area Home &amp; Commute Analytics
-                </h3>
-            </div>
-            <div class="panel-body">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <img src="images/househunter_bayarea.png" alt="HouseHunter Bay Area Search Platform" class="projectShowcaseImg">
-                        <div class="projectBadgeContainer">
-                            <span class="projectBadge">Node.js</span>
-                            <span class="projectBadge">Express</span>
-                            <span class="projectBadge">Real-Time Sync</span>
-                            <span class="projectBadge">Commute &amp; Crime Analytics</span>
-                            <span class="projectBadge">Fly.io</span>
-                        </div>
-                        <p class="panelHeaderIntro">
-                            <span class="spanFormat">
-                                Hunting for homes in San Francisco and the Bay Area with my wife proved how tricky it is to balance list price against real-world factors: peak-hour commute times into the city, neighborhood crime ratings, and hidden HOA fees. I created <strong>HouseHunter</strong> as a collaborative property decision engine built for couples and families to evaluate, compare, and bookmark homes together.
-                            </span>
-                        </p>
-                        <div class="projectLinksBar">
-                            <a href="https://housesearcher-bayarea.fly.dev/" target="_blank" class="liveDemoLink"><i class="fa fa-external-link"></i> Launch HouseHunter (housesearcher-bayarea.fly.dev)</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="projectButton" data-toggle="collapse" data-target="#houseHunterTab">
-                Show More
-            </button>
-            <div id="houseHunterTab" class="panel collapse">
-                <div class="longParagraphContainer">
-                    <p class="paragraphDefault">
-                        <span class="spanFormat">
-                            Traditional real estate portals focus strictly on bed/bath numbers and list prices, ignoring the daily realities of living in the Bay Area. HouseHunter puts commute logistics, neighborhood safety, and total cost of ownership at the forefront.
-                        </span><br>
-                        <span class="spanFormat">
-                            Key features and technical architecture:
-                        </span><br>
-                        <ol class="olIntroSecure">
-                            <li><strong>Multiplayer Collaborative Sessions:</strong> Lightweight shared 6-character room codes and PIN access allowing partners to synchronously rate, comment, and prioritize prospective homes together.</li>
-                            <li><strong>SF Transit &amp; Commute Calculation:</strong> Real-time commute estimations factoring in traffic conditions, BART / Caltrain proximity, and travel duration into San Francisco hubs.</li>
-                            <li><strong>Neighborhood Safety &amp; Crime Profiling:</strong> Integrates localized safety and crime rate metrics to evaluate street and neighborhood quality.</li>
-                            <li><strong>True Cost of Ownership Analysis:</strong> Computes true monthly expenditure by compounding list price, mortgage interest, property tax rates, and monthly HOA fees.</li>
-                        </ol>
-                        <span>
-                            Live App: <a href="https://housesearcher-bayarea.fly.dev/" target="_blank">housesearcher-bayarea.fly.dev</a>
-                        </span>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- 4. Voidfall: Dredge (3D Voxel Game Engine) -->
-        <div class="panel panel-default center-block">
-            <div class="panel-heading text-center">
-                <h3 class="panelTitles">
-                    Voidfall: Dredge — 3D Voxel Action Game &amp; Custom Engine
-                </h3>
-            </div>
-            <div class="panel-body">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <img src="images/voxel_3d_gameplay.png" alt="Voidfall: Dredge Gameplay and HUD" class="projectShowcaseImg">
-                        <div class="projectBadgeContainer">
-                            <span class="projectBadge">C++20</span>
-                            <span class="projectBadge">OpenGL 4.5 Core Profile</span>
-                            <span class="projectBadge">GLSL Shaders</span>
-                            <span class="projectBadge">Custom Voxel Pipeline</span>
-                            <span class="projectBadge">Multiplayer Architecture</span>
-                        </div>
-                        <p class="panelHeaderIntro">
-                            <span class="spanFormat">
-                                I've always had an interest in game development and graphics programming, which led me to build <strong>Voidfall: Dredge</strong>. It is a high-performance subterranean sci-fi voxel action game and custom engine built from scratch in modern <strong>C++20</strong> and <strong>OpenGL 4.5 Core Profile</strong>. Delvers descend into volatile planetary depths to extract Voidite crystals, breach sealed precursor vaults, survive radiation tremors, and defend extraction beacons.
-                            </span>
-                        </p>
-                        <div class="projectLinksBar">
-                            <a href="https://github.com/yalshinnawi/voxel_3d_voidfall_dredge" target="_blank" class="liveDemoLink"><i class="fa fa-github"></i> View GitHub Repository</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="projectButton" data-toggle="collapse" data-target="#voidfallTab">
-                Show More
-            </button>
-            <div id="voidfallTab" class="panel collapse">
-                <div class="longParagraphContainer">
-                    <p class="paragraphDefault">
-                        <span class="spanFormat">
-                            Built entirely from scratch without commercial game engines, <em>Voidfall: Dredge</em> bridges low-level memory-packed voxel architectures with modern graphics pipelines and client-server multiplayer synchronization.
-                        </span><br>
-                        <span class="spanFormat">
-                            Core engine and graphics features:
-                        </span><br>
-                        <ol class="olIntroSecure">
-                            <li><strong>High-Density Voxel Memory Architecture:</strong> 32x32x32 chunk hierarchies with 16-bit packed voxel memory layout (<code>uint8_t material_id</code>, <code>uint8_t flags_and_damage</code>). Bit-packed 8-byte vertex formatting with greedy meshing and ambient occlusion.</li>
-                            <li><strong>Procedural Cavern &amp; World Generation:</strong> Multi-octave 3D Simplex noise generating deep subterranean cavern networks, radioactive hazard zones, volcanic fissures, and sealed industrial vaults.</li>
-                            <li><strong>Dynamic Physics &amp; Voxel Destruction:</strong> AABB sweep collision detection with raycasted pneumatic drill destruction, real-time debris physics, and tactical flare illumination.</li>
-                            <li><strong>Atmospheric Subterranean Rendering:</strong> Volumetric distance fog, dynamic point light attenuation, glowing crystal shaders, and tactical radar sonar scanner effects.</li>
-                            <li><strong>Full Game Loop &amp; Audio DSP:</strong> Comprehensive mission cycle (Drop Pod &rarr; Mining Extraction &rarr; Defense &rarr; Debrief) with custom audio safety limiters and positional stereo sound.</li>
-                        </ol>
-                        <div style="margin-top: 15px; margin-bottom: 15px;">
-                            <img src="images/voxel_3d_montage.jpg" alt="Voidfall: Dredge 16-Phase Engine Architecture Montage" class="projectShowcaseImg">
-                            <figcaption class="arucoTagCap">Voidfall: Dredge — Complete Game Engine Phase Pipeline &amp; Systems Montage</figcaption>
-                        </div>
-                        <span>
-                            Source Code: <a href="https://github.com/yalshinnawi/voxel_3d_voidfall_dredge" target="_blank">github.com/yalshinnawi/voxel_3d_voidfall_dredge</a>
-                        </span>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="sectionDividerTitle">
-            Systems &amp; Academic Projects
-        </div>
-
-        <div class="panel panel-default center-block">
-            <div class="panel-heading text-center">
-                <h3 class="panelTitles">
-                    Secure File System
-                </h3>
-            </div>
-            <div class="panel-body">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="container">
-                            <p class="panelHeaderIntro">
-                                <span class="spanFormat">
-                                    In this project, cryptographic primitives such as RSA, Digital Signatures, PBKDF, HKDF, HMAC, and symmetric encryption were used to design and implement a client application for a secure file sharing system. The format is similar to Dropbox, but secured with cryptography so that the server cannot view or tamper the user's data. Additionally, the client application was written in Golang.
-                                </span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="projectButton" data-toggle="collapse" data-target="#secureFileSys">
-                Show More
-            </button>
-            <div id="secureFileSys" class="panel collapse">
-                <div class="longParagraphContainer">
-                    <p class="paragraphDefault">
-                        <span class="spanFormat">
-                            In this project there were 4 main components. The Keystore, Datastore, malicious users, and user communication.
-                            The Keystore is a trusted service hosted on a server and network to which the adversary does not have access. 
-                            No adversary will be able to maliciously overwrite, modify, or otherwise tamper with any key-value entry stored on the Keystore server.
-                            The Datastore is an untrusted service hosted on a server and network controlled by an adversary. The adversary can view and record the content and metadata of all requests (set/get/delete) to the Datastore API. This allows the adversary to know who stored which key-value entry, when, and what the contents is.
-                        </span><br>
-                    
-                        <span class="spanFormat">
-                            These structures are used for sharing files between users, and after a user shares a file with another user via ShareFile(), the sender will share the resulting accessToken with the recipient via a chat app that uses insecure HTTP. Therefore, the adversary can execute a MiTM attack to record and modify messages, including accessTokens, that users send to each other. However, the adversary does not execute any Denial of Service (DoS) style attacks that prevent (potentially modified) messages from eventually being delivered to the intended recipient.
-                        </span><br>
-
-                        <span class="spanFormat">
-                            My task was to create a secure file system using the Datastore and Keystore APIs to
-                            allow users to safely share/revoke files with each other without an adversary tampering with their data.
-                            I implemented the following functions and secured all communication using cryptographic primatives.
-                        </span><br>
-
-                        <ol class="olIntroSecure">
-                            <li>InitUser: Create a user account.</li>
-                            <li>GetUser: Log in using username and password.</li>
-                            <li>User.StoreFile: Store user files.</li>
-                            <li>User.LoadFile: Load user files.</li>
-                            <li>User.AppendFile: Efficiently append data to an existing file.</li>
-                            <li>User.ShareFile: Create a secure file share invitation</li>
-                            <li>User.ReceiveFile: Add a shared file to personal file namespace</li>
-                            <li>User.RevokeFile: Revoke file access</li>
-                        </ol>
-
-                        <span>
-                            Additional information can be found here: <a href="https://sp21.cs161.org/proj2/" target="_blank">CS161 Project 2</a>
-                        </span>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="panel panel-default center-block">
-            <div class="panel-heading text-center">
-                <h3 class="panelTitles">
-                    CPU Design
-                </h3>
-            </div>
-            <div class="panel-body">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="container">
-                            <div>
-                                <img src="images/EECS151L Final Project High-level Overview of System.png" alt="High Level Overview" class="EECS151OverviewPic">
-                                </img>
-                                <figcaption class="overviewPicCap">CPU High Level Organization</figcaption>
-                            </div>
-                            <p class="panelHeaderIntro">
-                                <span class="spanFormat">
-                                    The goal of this project was to design and implement a 3-stage pipelined Central Processing Unit (CPU) using the
-                                    RISC-V
-                                    ISA programmed in Verilog to run on a Zynq 7000-series FPGA. In addition to having a processor that could run
-                                    the base
-                                    RV32 instruction set, there had to also be separate modules in the datapath for handling input/output (IO) to
-                                    transmit
-                                    and receive data.
-                                </span><br>
-
-                                <span class="spanFormat"> 
-                                    An on-chip Universial Asynchronous Reciever-Transmitter (UART) using the technique of Memory
-                                    Mapped IO
-                                    (MMIO) was to be implemented to send and receive bytes using RISC-V load and store instructions. This interface
-                                    would
-                                    then allow the CPU to store the user’s instructions into BIOS memory which could then be read on the following
-                                    cycle
-                                    instead of reading from Instruction Memory (IMEM).
-                                </span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="projectButton" data-toggle="collapse" data-target="#cpuDesign">
-                Show More
-            </button>
-            <div id="cpuDesign" class="panel collapse">
-                <div class="longParagraphContainer">
-                    <p class="paragraphDefault">
-                        The processor was divided into 3 sections, the Instruction Fetch Stage (IF Stage), Instruction Decode and Execute
-                        Stage
-                        (IDEX Stage), and Memory Write Back Stage (MEMWB Stage). In the IF Stage, new instructions are loaded from either
-                        the
-                        IMEM or BIOS which are then decoded and passed through the Register File (RegFile) to load data for the IDEX Stage.
-                        The
-                        IDEX Stage then passes this data through combinational submodules such as the Arithmetic Logic Unit (ALU) or Branch
-                        Comparator to compute the logic of the current instruction. Output from this stage is saved to the IMEM and Data
-                        Memory
-                        (DMEM) which is then passed through to the MEMWB Stage. Following this, the MEMWB Stage handles what data is to be
-                        written back to the RegFile for the current instruction.
-                    </p>
-                </div>
-                <div class="panel panel-default center-block" style="width: 95%">
-                    <div class="panel-heading text-center">
-                        <div class="row" style="text-align: center;">
-                            <div class="col-md-4">
-                                IF Stage
-                            </div>
-                            <div class="col-md-4">
-                                IDEX Stage
-                            </div>
-                            <div class="col-md-4">
-                                MEMWB Stage
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <img src="images/EECS151DataPath-IF Stage.jpg" alt="IF Stage" class="centerImage">
-                                <button id="myBtn" class="stageButtons">
-                                    Enlarge
-                                </button>
-                                <div id="myModal" class="modal">
-                                    <div class="modal-content">
-                                        <span class="IFClose">&times</span>
-                                        <img src="images/EECS151DataPath-IF Stage.jpg" alt="Zoomed In IF Stage" class="IFStageZoom" >
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <img src="images/EECS151DataPath-IDEX Stage.jpg" alt="IDEX Stage" class="centerImage">
-                                <button id="idexBtn" class="stageButtons">
-                                    Enlarge
-                                </button>
-                                <div id="IDEXModal" class="modal">
-                                    <div class="IDEX-modal-content">
-                                        <span class="IDEXClose">&times</span>
-                                        <img id="IDEXImg" src="images/EECS151DataPath-IDEX Stage.jpg" alt="Zoomed In IDEX Stage" class="IDEXStageZoom">
-                                    </div>
-                                </div>
-                            </div>
-                        
-                            <div class="col-md-4">
-                                <img src="images/EECS151DataPath-MEMWB Stage.jpg" alt="MEMWB Stage" class="centerImage">
-                                <button id="memwbBtn" class="stageButtons">
-                                    Enlarge
-                                </button>
-                                <div id="MEMWBModal" class="modal">
-                                    <div class="modal-content">
-                                        <span class="MEMWBClose">&times</span>
-                                        <img src="images/EECS151DataPath-MEMWB Stage.jpg" alt="Zoomed In MEMWB Stage" class="IFStageZoom">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="longDescriptionCPU">
-                            <p class="paragraphDefault">
-                                <span class="spanFormat">
-                                    In terms of the original goal, the CPU checked all the marks. The entire datapath was implemented with a 3-stage
-                                    pipeline that could send and receive data through the UART MMIO interface. Through this interface, the CPU was able
-                                    to
-                                    interact with on-board buttons, switches, LEDS, and the audio output with the Subtractive Synthesizer.
-                                </span><br>
-                                
-                                <span class="spanFormat">
-                                    By the final checkpoint, the processor was able to reach a clock speed of ~70MHz. The max path delay turned out to
-                                    be in
-                                    the IDEX Stage of the 3-stage pipeline. Specifically the delay was between the initial instruction input to the IDEX
-                                    Stage to the Synthesizer block at the end of this stage. It is speculated that this delay occurs because of the need
-                                    for
-                                    signed multiplication and buffer that exists in the PWM block for delivering audio to the on-board audio port.
-                                    Multiplication is a very intensive process and the current method used in this design is not optimal.
-                                </span><br>
-                                
-                                <span class="spanFormat">
-                                    Additionally, it is important to mention that before implementing the NCO, PWM and Synthesizer, the critical path
-                                    instead existed between the MEMWB stage and IDEX stage during forwarding. In the previous design we had reached a
-                                    final
-                                    clock speed of ~76MHz. It is believed that this critical path existed because of the need for the RegFile return
-                                    address
-                                    and write enable from 2 cycles ago.
-                                </span><br>
-                                
-                                <span>
-                                    For both designs, the CPI of the mmult program was ~1.18 most likely due to the design’s scheme of handling jumps
-                                    and
-                                    branch instructions by simply adding a NOP to the next cycle. The minimum clock period for the final design was
-                                    0.214s
-                                    for the mmult program, the number of Slice LUTs used was 2,283, and the number of Slice Registers used was 905.
-                                </span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="panel panel-default center-block">
-            <div class="panel-heading text-center">
-                <h1 class="panelTitles">
-                    Yoga Pose Correction
-                </h1>
-            </div>
-            <div class="panel-body">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="YogaContainer">
-                            <div>
-                                <img class="EECS106AOverViewPic" src="images/RoboticsCoverPic.png" alt="Baxter w/ HumanBot">
-                                <!-- <figcaption class="EECS106APicCap">
-                                    Baxter Robot and the HumanBot Model
-                                </figcaption> -->
-                            </div>
-                            <p class="YogaParagraphIntro">
-                                <span class="spanFormat">
-                                    This project was inspired by real world challenges that have been caused by the COVID-19 pandemic. Because
-                                    of social
-                                    distancing precautions people are unable to participate in typical yoga classes. Yoga instructors often have
-                                    to put
-                                    their hands on their students in order to help them with their poses.
-                                </span><br>
-                        
-                                <span class="spanFormat">
-                                    This project attempts to use the popular Rethink Robotics robot Baxter as a makeshift yoga instructor. The
-                                    goal of
-                                    this
-                                    project is to correct a person's pose. Baxter reaches out and nudges the person's arms from their original
-                                    position
-                                    into
-                                    the desired one, attempting to mimic what an instructor would do.
-                                </span><br>
-                        
-                                <span>
-                                    Because of the COVID-19 pandemic all of this work was completed using Gazebo simulation software to model
-                                    Baxter and
-                                    the
-                                    human participant.
-                                </span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="projectButton" data-toggle="collapse" data-target="#yogaPose">
-                Show More
-            </button>
-            <div id="yogaPose" class="panel collapse">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="longParagraphContainer">
-                            <p class="paragraphDefault">
-                                In order to accomplish our project goals this really required two main components: the mannequin's pose and a plan to
-                                move the mannequin’s arms. To acquire the mannequin's pose, we used Baxter's head camera and arUco markers. We chose to
-                                use arUco tags because they make it possible to get the three dimensional position of the tag using only one camera.
-                                They are also fairly well documented and there are libraries available to detect arUco markers. While arUco tags may be
-                                a bit cumbersome for a user in a real life scenario they offer a simple and well tested solution for defining the
-                                location of objects in 3D space using just one camera. In future iterations it may make sense to use a RealSense camera
-                                or IMUs for pose estimation.
-                                Each aspect of the simulation/project design is further discussed below in the Project Details section.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="panel panel-default center-block" style="width: 95%; margin-left: 20px;">
-                            <div class="panel-heading text-center">
-                                <h2 class="YogaTitles">
-                                    ArUco Tags
-                                </h2>
-                            </div>
-                            <div class="panel-body">
-                                <p class="paragraphDefault">
-                                    There are several ways to get the pose of a person. Kinect, IMUs, or other sensors might work. We decided to use
-                                    arUco
-                                    tags from the OpenCV library. These are pre-defined tags that allow a single camera to find the frame of the tag
-                                    relative to the camera in 3D space. Luckily enough there is already a ROS package for detecting arUco tags. In this
-                                    design we ended up using the aruco_detect package. By subscribing to the fiducial_transforms topic published by the
-                                    aruco_detect package, we were able to get the frame of the arUco tag on the mannequin's arm in the head_camera
-                                    frame.
-                                    This pose was then transformed to the base frame using a tf_buffer.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <img src="images/roboticsArucoTagPic.webp" alt="ArucoTag on HumanBot" class="arucoTagPic">
-                        <figcaption class="arucoTagCap"">
-                            ArUco Tag Detection on HumanBot
-                        </figcaption>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <img src="images/MannequinPic.jpg" alt="HumanBot Mannequin" class="humanBotPic">
-                        <figcaption class="arucoTagCap">
-                            HumanBot Spawn
-                        </figcaption>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <div class="panel panel-default center-block" style="width: 95%;">
-                            <div class="panel-heading text-center">
-                                <h2 class="YogaTitles">
-                                    HumanBot - Spawning the Mannequin
-                                </h2>
-                            </div>
-                            <div class="panel-body">
-                                <p class="paragraphDefault">
-                                    HumanBot is the name that we gave the mannequin, and it is defined by a urdf.xacro file. This file defines his links,
-                                    joints, and physics.
-                                    
-                                    HumanBot’s arms defined to move up and down so that they can be relocated by Baxter. Additionally, as can be seen in the
-                                    picture to the right, there are two arUco tags on the mannequin's arms. These are modeled as fixed joints onto the arm
-                                    and allow the head_camera to detect the arm.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="panel panel-default center-block" style="width: 95%; margin-left: 20px;">
-                            <div class="panel-heading text-center">
-                                <h2 class="YogaTitles">
-                                    Motion Planning with Baxter
-                                </h2>
-                            </div>
-                            <div class="panel-body">
-                                <p class="paragraphDefault">
-                                    Finally, with this new pose from the aruco_detect package we were able to use the MoveIt package to handle the path
-                                    planning and collision detection. The ultimate reason for using MoveIt instead of simply using an Inverse Kinematics
-                                    solver was because initially we had planned to add resistance to HumanBot's arm and the path planner would allow for
-                                    a
-                                    sense of control as the robot continues to move the arms.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                
-                    <div class="col-lg-6">
-                        <img src="images/roboticsMotionPlanning.webp" alt="Motion Planning" class="humanBotPic" style="margin-top: 40px">
-                        <figcaption class="arucoTagCap">
-                            Baxter and HumanBot
-                        </figcaption>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="panel panel-default center-block" style="width: 95%;">
-                            <div class="panel-heading text-center">
-                                <h2 class="YogaTitles">Results & Video Demo</h2>
-                            </div>
-
-                            <div class="panel-body">
-                                <p class="paragraphDefault">
-                                    <span class="spanFormat">
-                                        In the end we were able to successfully use Baxter to move the HumanBot’s arms. However, there are many
-                                        improvements to
-                                        be made as mentioned at the end of the Design section. The final product used manual inputs to move the
-                                        HumanBot’s arms,
-                                        but we were able to find the exact location of the aruco_tag.
-                                    </span><br>
-                                
-                                    <span class="spanFormat">
-                                        In the video, it first shows in RVIZ how Baxter’s head_camera can target and get the pose of an aruco tag. This
-                                        is shown
-                                        in the bottom left corner of the screen. Using the pose of the tag, Baxter can then plan his movement to the
-                                        HumanBot
-                                        and in the case of this demonstration, Baxter lifts HumanBot's arm into a T-Pose position. After the movement is
-                                        finished, the pose of the aruco_tag, shown in RVIZ defined in the world frame of Gazebo, is shown to have the
-                                        same pose
-                                        as the calculated pose in the terminal.
-                                    </span><br>
-                                </p>
-                                <div class="embed-responsive embed-responsive-16by9">
-                                    <iframe class="embed-responsive-item; videoFormat" src="videos/RoboticsDemo.mp4" frameborder="0"></iframe>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="panel panel-default center-block">
-            <div class="panel-heading text-center">
-                <h1 class="panelTitles">
-                    Gitlet
-                </h1>
-            </div>
-            <div class="panel-body">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <p class="YogaParagraphIntro">
-                            <span>
-                                With the inspiration of the popular system Git, I created a smaller and simpler version-control system named Gitlet in CS61B at UC Berkeley. A version-control system is a backup system for collections of files. The main functionality that Gitlet supports is:
-                                <ol class="olIntro">
-                                    <li>Saving the contents of entire directories of files.</li>
-                                    <li>Restoring a version of one or more files or entire commits.</li>
-                                    <li>Viewing the history of your backups via a log.</li>
-                                    <li>Maintaining related sequences of commits, called branches.</li>
-                                    <li>Merging changes in one branch into another.</li>
-                                </ol>
-                            </span>
-                        </p>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <img src="images/gitletCoverPhoto.png" alt="Git Example" class="gitletCoverPhoto">
-                        <figcaption class="arucoTagCap">
-                            Image Credit: <a href="https://medium.com/@gohberg/the-biggest-misconception-about-git-b2f87d97ed52" target="_blank">Biggest
-                                Misconception About Git</a>
-                        </figcaption>
-                    </div>
-                </div>
-                <button class="projectButton" data-toggle="collapse" data-target="#gitletTab">
-                    Show More
-                </button>
-                <div id="gitletTab" class="panel collapse">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="longParagraphContainer">
-                                <p class="paragraphDefault">
-                                    <span>
-                                        The purpose of a version-control system is to help save different versions of your project periodically so that you
-                                        can
-                                        go back to previous versions if you mess something up. This control system also allows others to push their own
-                                        versions
-                                        onto the control-system so that one can collaborate on a project without discarding previous work or modifying it,
-                                        you
-                                        would instead create a new version.
-                                    </span><br>
-                                    <span>
-                                        In this project I implemented the following git features: <mark class="markChange">init</mark>, <mark class="markChange">add</mark>,
-                                        <mark class="markChange">commit</mark>, <mark class="markChange">rm</mark>, <mark class="markChange">log</mark>, <mark class="markChange">global-log</mark>, <mark class="markChange">find</mark>,
-                                        <mark class="markChange">status</mark>, <mark class="markChange">checkout</mark>, <mark class="markChange">branch</mark>, <mark class="markChange">rm-branch</mark>, <mark class="markChange">reset</mark>, and
-                                        <mark class="markChange">merge</mark>.
-                                    </span>
-
-                                    <span>
-                                        To mimick the tree-like structure of commits that git uses, gitlet used different kinds of objects:
-                                        <ul class="ulFormat">
-                                            <li> <b>blobs</b>: contents of the files, serving as different versions of a document or project.</li>
-                                            <li> <b>trees</b>: data structure made of commit objects that connect to each other through their respective
-                                                parent commits.</li>
-                                            <li> <b>commits</b>: combinations of log messages, a reference to a tree, references to different blobs,
-                                                references to parent commits, and other metadata (commit date, author, commit message, and the commit ID)
-                                            </li>
-                                        </ul>
-                                    </span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <p class="paragraphDefault" style="margin-left: 20px;">
-                                Each blob and commit has a unique integer ID that is created using the same cryptographic hash function
-                                SHA-1 (Secure
-                                Hash 1) that Git uses. The tree structures are made of commits and these commits reference different blobs
-                                which
-                                represent versions of the files that the user has. An example of this structure is shown below, where the
-                                commit
-                                contains the references to the blobs, parent link, the date the commit was made, and version names. The blob
-                                contains
-                                the data of each file, and both the commits and blobs have their own unique SHA-1 hash value.
-                            </p>
-                        </div>
-
-                        <div class="col-lg-6">
-                            <img src="images/gitletCommitsAndBlobs.png" alt="gitletPic" class="commitsExamplePic">
-                            <figcaption class="arucoTagCap">
-                                Image Credit:
-                                <a href="https://inst.eecs.berkeley.edu/~cs61b/fa19/materials/proj/proj3/" target="_blank">UC Berkeley CS61B
-                                    Fall, 2019</a>
-                            </figcaption>
-                        </div>
-                    </div>
-                </div>    
-            </div>
-        </div>
-
-        <div class="panel panel-default center-block">
-            <div class="panel-heading text-center">
-                <h1 class="panelTitles">
-                    NumC
-                </h1>
-            </div>
-            <div class="panel-body" >
-                <div class="row" style="margin-bottom: 15px;">
-                    <div class="col-lg-6">
-                        <img src="images/NumC.png" alt="NumC logo" style="max-width: 100%; height: auto;">
-                        <figcaption class="arucoTagCap">
-                            Image Credit: <a href="https://commons.wikimedia.org/wiki/File:NumPy_logo.svg" target="_blank">NumPy logo </a>
-                        </figcaption>
-                    </div>
-                        
-                    <div class="col-lg-6 YogaParagraphIntro" style="margin-top: 15px;">
-                        <p>
-                            In this project I implemented a slower version of numpy, called numc in the programming language C. Although the matrix multiplication and power operations are not as fast as numpy, they are still much better than the naive implementations via parallel programming using OpenMP and SIMD. This was a very difficult project, and required a lot of thought to get to the required speedup.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <button class="projectButton" data-toggle="collapse" data-target="#numcTab">
-                Show More
-            </button>
-            <div id="numcTab" class="panel collapse">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="longParagraphContainer">
-                                <p class="paragraphDefault">
-                                    <span class="spanFormat">
-                                        To recreate the functionality of NumPy, the first task was to build a struct in C that could work like matrices do
-                                        in
-                                        NumPy. Specifically this meant that I had to create functions that could properly take slices from arrays. As easy
-                                        as
-                                        this sounds, it became quite complicated because of the properties of allocation and deallocation of memory in C.
-                                        For
-                                        instance, if a slice of a matrix was to be deallocated, that did not mean we should lose reference to the parent
-                                        matrix.
-                                    </span><br>
-                                    
-                                    <span class="spanFormat">
-                                        Once the matrix structure was properly created, the Python-C interface was then tackled. To work like numPy, I had
-                                        to ensure that the user could import NumC into a Python program and use methods from the C implementation in Python.
-                                        To implement this, the <a href="https://docs.python.org/3.6/c-api/index.html">Python/C API</a> was used to convert
-                                        the methods and structs in C into the PyObjects. With this interface, it was easy to test the functionality of the
-                                        program and compare it to NumPy. Following this, the add, subtraction, multiplication, negation, absolute value, and
-                                        power operations were implemented so that they could be used on NumC matrices.
-                                    </span><br>
-                                    
-                                    <span class="spanFormat">
-                                        Next was by far the hardest part of this entire project, which was to optimize the naive implementations of all the
-                                        matrix operations. This was done by using SIMD instructions with <a
-                                            href="https://software.intel.com/sites/landingpage/IntrinsicsGuide/">Intel Instrinsic functions</a>. The
-                                        addition, subtraction, negation, and absolute value functions were rather simplistic. In contrast, the matrix
-                                        multiplication and power operations proved to be much more difficult. I had tried pretty much everything I could
-                                        think of on matrix multiply. First I ordered the naive solution loops to
-                                        produce a ~21x speedup, and then used openMP to reach a ~87x speedup, though this speedup was very unstable.
-                                    </span><br>
-                                    
-                                    <span class="spanFormat">
-                                        Due to this I moved on to methods such as transposing the second matrix and using a loop structure to access the
-                                        elements row by row instead of column by column to take advantage of spatial locality. I also implemented cache
-                                        blocking
-                                        on my O(n^2) solution by transposing the matrix. Following that I used openMP, but in the end I was only able to
-                                        reach a
-                                        ~42x speedup. This wasn’t good enough so I moved onto the last method I tried, which was trying to only use Intel
-                                        Instrinsic stores with SIMD on
-                                        the outermost loop because the store instruction is very costly. To do so, I used a trick where I created an array
-                                        of SIMD vectors the size of the result matrix’s
-                                        (column size / 4). I first created a naive solution without SIMD and openMP, and it came out to produce a ~15x
-                                        speedup which was pretty bad, but then after a long time I was able to figure out how to convert the structure using
-                                        SIMD.
-                                        With this I got ~45x speed, and then I used openMP and parallelized the outermost loop and was able to get a ~65x
-                                        speedup.
-                                        Then, I unrolled the innermost loop a little more, which proved to be difficult, and I was able to reach a ~98x
-                                        speedup.
-                                    </span> <br>
-                                    
-                                    <span>
-                                        Then for power, I was aware that there was a O(log(n)) solution for normal exponentiation (e.g. x^y), so I tried to
-                                        replicate that using matrices. This was quite difficult because I needed to create a lot of different temporary
-                                        matrices
-                                        to store values, but eventually I figured out how to create a solution that is most likely O(log(n) * n^3) using the
-                                        previous matrix multiplication function that was explained.
-                                    </span><br>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- footer
-        ================================================== -->
-    <footer style="margin-top: 100px;">
-    
-        <div class="row">
-    
-            <div class="twelve columns">
-                <ul class="social-links">
-                    <li><a href="https://www.linkedin.com/in/yousef-alshinnawi/" target="_blank"><i
-                                class="fa fa-linkedin"></i></a></li>
-                    <li><a href="https://github.com/yalshinnawi" target="_blank"> <i class="fa fa-github"></i></a></li>
+        <div class="row banner">
+            <div class="banner-text">
+                <h1 class="responsive-headline">Featured Projects.</h1>
+                <h3>Full-stack applications, real-time game engines, robotics, and low-level computer systems designed &amp; built by <span>Yousef Al-Shinnawi</span>.</h3>
+                <hr />
+                <ul class="social">
+                    <li><a href="https://www.linkedin.com/in/yousef-alshinnawi/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="https://github.com/yalshinnawi" target="_blank"><i class="fa fa-github"></i></a></li>
                 </ul>
             </div>
-    
-            <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#projects"><i class="icon-up-open"></i></a></div>
-    
         </div>
-    
-    </footer> 
 
-    <!-- Footer End-->
+        <p class="scrolldown">
+            <a class="smoothscroll" href="#projects-section"><i class="icon-down-circle"></i></a>
+        </p>
+    </header>
 
-    <script>
-        var myVideo = document.getElementById("roboticsVideo")
+    <!-- ==============================================
+         PROJECTS SECTION
+         ============================================== -->
+    <section id="projects-section">
+        <div class="projects-wrapper">
 
-        function playPause() {
-            if (myVideo.paused)
-                myVideo.play();
-            else
-                myVideo.pause();
-        }
-    </script>
+            <!-- Section Intro -->
+            <div class="projects-section-header">
+                <h2><span>Engineering Portfolio</span></h2>
+                <p>A curated showcase of recent full-stack production platforms, graphics engines, and Berkeley systems architecture projects.</p>
+            </div>
+
+            <!-- Filter Controls -->
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">All Projects (9)</button>
+                <button class="filter-btn" data-filter="web">Web &amp; Full-Stack (3)</button>
+                <button class="filter-btn" data-filter="gamedev">Game Dev &amp; Graphics (1)</button>
+                <button class="filter-btn" data-filter="systems">Systems &amp; Hardware (5)</button>
+            </div>
+
+            <!-- Category Divider: Recent Web & Game Projects -->
+            <div class="category-divider" data-section="featured">
+                <h3>Recent Production &amp; Game Projects</h3>
+                <span class="divider-count">4 Projects</span>
+            </div>
+
+            <!-- 1. EquityPulse -->
+            <div class="project-card" data-category="web">
+                <div class="project-card-header">
+                    <div class="header-left">
+                        <span class="project-category-tag">Web &amp; Full-Stack</span>
+                        <h3 class="project-title">EquityPulse — Personal Wealth Operating System</h3>
+                    </div>
+                    <span class="project-year-badge">2026 Production</span>
+                </div>
+                <div class="project-card-body">
+                    <div class="project-media-col">
+                        <img src="images/equitypulse.png" alt="EquityPulse Wealth Tracker Dashboard" class="project-card-img">
+                        <p class="media-caption">Production Dashboard &amp; Private Ledger Interface</p>
+                    </div>
+                    <div class="project-info-col">
+                        <p class="project-description">
+                            <strong>EquityPulse</strong> is a privacy-first wealth operating system and portfolio tracking platform designed to give individuals complete visibility into their net worth, multi-asset investments, and dividend projections without sacrificing their financial data privacy. Built with client-side zero-knowledge architecture, financial records and telemetry are sanitized and encrypted before ever persisting.
+                        </p>
+                        <div class="project-tech-tags">
+                            <span class="tech-tag teal">Next.js / React</span>
+                            <span class="tech-tag teal">TypeScript</span>
+                            <span class="tech-tag blue">Web Cryptography (PBKDF2/HMAC)</span>
+                            <span class="tech-tag purple">Zero-Knowledge Isolation</span>
+                            <span class="tech-tag">Tailwind CSS</span>
+                        </div>
+                        <div class="project-action-links">
+                            <a href="https://equitypulse.pro/" target="_blank" class="project-btn primary"><i class="fa fa-external-link"></i> Launch EquityPulse (equitypulse.pro)</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="project-accordion-toggle" type="button">
+                    <span>Deep Dive &amp; Architecture</span>
+                    <i class="fa fa-chevron-down toggle-icon"></i>
+                </button>
+                <div class="project-accordion-content">
+                    <p>
+                        Traditional net worth apps require handing over banking credentials and plaintext financials to third parties. EquityPulse was created as a zero-knowledge personal finance engine where the client is completely in control of their private ledger:
+                    </p>
+                    <ol>
+                        <li><strong>Zero-Knowledge Cryptographic Vault:</strong> Uses client-side PBKDF2 key derivation with 100,000 salt iterations and tamper-proof HMAC tokens, ensuring financial numbers never leave the user's session unencrypted.</li>
+                        <li><strong>Local In-Memory Sanitization:</strong> Financial statement upload parser runs in-memory to automatically mask account numbers and personally identifiable information (PII) before deriving transactions and holdings.</li>
+                        <li><strong>Live Financial Intelligence:</strong> Real-time price tracking, automated dividend yield modeling, asset allocation breakdowns, and long-term net worth forecast simulations.</li>
+                        <li><strong>Session Isolation &amp; Security:</strong> Strict session boundary enforcement preventing leakage or cross-session tracking.</li>
+                    </ol>
+                    <p>Live Platform: <a href="https://equitypulse.pro/" target="_blank">equitypulse.pro</a></p>
+                </div>
+            </div>
+
+            <!-- 2. Armenia Real Estate Hub -->
+            <div class="project-card" data-category="web">
+                <div class="project-card-header">
+                    <div class="header-left">
+                        <span class="project-category-tag">Web &amp; Full-Stack</span>
+                        <h3 class="project-title">Armenia Real Estate Hub — Multi-Platform Property Aggregator</h3>
+                    </div>
+                    <span class="project-year-badge">2026 Production</span>
+                </div>
+                <div class="project-card-body">
+                    <div class="project-media-col">
+                        <img src="images/armeniarealestatehub.png" alt="Armenia Real Estate Hub Property Portal" class="project-card-img">
+                        <p class="media-caption">Centralized Property Portal with Normalized FX &amp; Pricing</p>
+                    </div>
+                    <div class="project-info-col">
+                        <p class="project-description">
+                            I built <strong>Armenia Real Estate Hub</strong> out of personal necessity. Searching for homes in Armenia was notoriously fragmented across scattered channels—Telegram groups, List.am, Facebook groups, and broker pages. Because my wife is Armenian and we regularly search for homes in Armenia, I built a unified real estate discovery platform that aggregates over 3,600+ listings into a centralized, searchable interface with localized currency exchange and price per m² metrics.
+                        </p>
+                        <div class="project-tech-tags">
+                            <span class="tech-tag teal">Next.js</span>
+                            <span class="tech-tag teal">TypeScript</span>
+                            <span class="tech-tag purple">Distributed Scraping &amp; Ingestion</span>
+                            <span class="tech-tag blue">Currency Normalization</span>
+                            <span class="tech-tag">Tailwind CSS</span>
+                        </div>
+                        <div class="project-action-links">
+                            <a href="https://armeniarealestatehub.homes/" target="_blank" class="project-btn primary"><i class="fa fa-external-link"></i> Launch Armenia Hub (armeniarealestatehub.homes)</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="project-accordion-toggle" type="button">
+                    <span>Deep Dive &amp; Ingestion Pipeline</span>
+                    <i class="fa fa-chevron-down toggle-icon"></i>
+                </button>
+                <div class="project-accordion-content">
+                    <p>
+                        Finding housing in Armenia traditionally meant monitoring dozens of separate Telegram channels, scrolling through unindexed Facebook groups, and translating disparate formats with varying currencies (AMD, USD, RUB). Armenia Real Estate Hub bridges this gap with an automated ingestion and aggregation engine:
+                    </p>
+                    <ol>
+                        <li><strong>Multi-Channel Ingestion Pipeline:</strong> Continuous ingestion pipelines monitoring Telegram channels, List.am, Facebook groups, and MyRealty, deduplicating repetitive listings and parsing raw text into structured attributes.</li>
+                        <li><strong>Dynamic Currency &amp; Metric Normalization:</strong> Live exchange rate engine converting between AMD (֏), USD ($), and Rubles (₽), calculating standard price per square meter ($/m²) for objective comparison.</li>
+                        <li><strong>District-Level &amp; Property Filtering:</strong> Granular filtering across Yerevan districts (Kentron, Arabkir, Malatia-Sebastia, etc.) by room count, square footage, building floor, and zoning (residential vs. commercial).</li>
+                        <li><strong>Direct Landlord / Broker Reach:</strong> Direct one-click WhatsApp and Telegram action buttons linked to the original verified source post.</li>
+                    </ol>
+                    <p>Live Website: <a href="https://armeniarealestatehub.homes/" target="_blank">armeniarealestatehub.homes</a></p>
+                </div>
+            </div>
+
+            <!-- 3. HouseHunter (Bay Area) -->
+            <div class="project-card" data-category="web">
+                <div class="project-card-header">
+                    <div class="header-left">
+                        <span class="project-category-tag">Web &amp; Full-Stack</span>
+                        <h3 class="project-title">HouseHunter — Collaborative Bay Area Home &amp; Commute Analytics</h3>
+                    </div>
+                    <span class="project-year-badge">2026 Production</span>
+                </div>
+                <div class="project-card-body">
+                    <div class="project-media-col">
+                        <img src="images/househunter_bayarea.png" alt="HouseHunter Bay Area Search Platform" class="project-card-img">
+                        <p class="media-caption">Commute-Factored Home Evaluation &amp; Multiplayer Sessions</p>
+                    </div>
+                    <div class="project-info-col">
+                        <p class="project-description">
+                            Hunting for homes in San Francisco and the Bay Area with my wife proved how tricky it is to balance list price against real-world factors: peak-hour commute times into the city, neighborhood crime ratings, and hidden HOA fees. I created <strong>HouseHunter</strong> as a collaborative property decision engine built for couples and families to evaluate, compare, and bookmark homes together.
+                        </p>
+                        <div class="project-tech-tags">
+                            <span class="tech-tag teal">Node.js</span>
+                            <span class="tech-tag teal">Express</span>
+                            <span class="tech-tag blue">Real-Time Sync</span>
+                            <span class="tech-tag purple">Commute &amp; Crime Analytics</span>
+                            <span class="tech-tag">Fly.io</span>
+                        </div>
+                        <div class="project-action-links">
+                            <a href="https://housesearcher-bayarea.fly.dev/" target="_blank" class="project-btn primary"><i class="fa fa-external-link"></i> Launch HouseHunter (housesearcher-bayarea.fly.dev)</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="project-accordion-toggle" type="button">
+                    <span>Deep Dive &amp; Collaborative Engine</span>
+                    <i class="fa fa-chevron-down toggle-icon"></i>
+                </button>
+                <div class="project-accordion-content">
+                    <p>
+                        Traditional real estate portals focus strictly on bed/bath numbers and list prices, ignoring the daily realities of living in the Bay Area. HouseHunter puts commute logistics, neighborhood safety, and total cost of ownership at the forefront:
+                    </p>
+                    <ol>
+                        <li><strong>Multiplayer Collaborative Sessions:</strong> Lightweight shared 6-character room codes and PIN access allowing partners to synchronously rate, comment, and prioritize prospective homes together.</li>
+                        <li><strong>SF Transit &amp; Commute Calculation:</strong> Real-time commute estimations factoring in traffic conditions, BART / Caltrain proximity, and travel duration into San Francisco hubs.</li>
+                        <li><strong>Neighborhood Safety &amp; Crime Profiling:</strong> Integrates localized safety and crime rate metrics to evaluate street and neighborhood quality.</li>
+                        <li><strong>True Cost of Ownership Analysis:</strong> Computes true monthly expenditure by compounding list price, mortgage interest, property tax rates, and monthly HOA fees.</li>
+                    </ol>
+                    <p>Live App: <a href="https://housesearcher-bayarea.fly.dev/" target="_blank">housesearcher-bayarea.fly.dev</a></p>
+                </div>
+            </div>
+
+            <!-- 4. Voidfall: Dredge (3D Voxel Game Engine) -->
+            <div class="project-card" data-category="gamedev">
+                <div class="project-card-header">
+                    <div class="header-left">
+                        <span class="project-category-tag">Game Dev &amp; Graphics</span>
+                        <h3 class="project-title">Voidfall: Dredge — 3D Voxel Action Game &amp; Custom Engine</h3>
+                    </div>
+                    <span class="project-year-badge">2026 Engine</span>
+                </div>
+                <div class="project-card-body">
+                    <div class="project-media-col">
+                        <img src="images/voxel_3d_gameplay.png" alt="Voidfall: Dredge Gameplay and HUD" class="project-card-img">
+                        <p class="media-caption">Subterranean Extraction &amp; Dynamic Voxel Volumetrics</p>
+                    </div>
+                    <div class="project-info-col">
+                        <p class="project-description">
+                            I've always had an interest in game development and graphics programming, which led me to build <strong>Voidfall: Dredge</strong>. It is a high-performance subterranean sci-fi voxel action game and custom engine built from scratch in modern <strong>C++20</strong> and <strong>OpenGL 4.5 Core Profile</strong>. Delvers descend into volatile planetary depths to extract Voidite crystals, breach sealed precursor vaults, survive radiation tremors, and defend extraction beacons.
+                        </p>
+                        <div class="project-tech-tags">
+                            <span class="tech-tag teal">C++20</span>
+                            <span class="tech-tag blue">OpenGL 4.5 Core Profile</span>
+                            <span class="tech-tag purple">GLSL Shaders</span>
+                            <span class="tech-tag">Custom Voxel Pipeline</span>
+                            <span class="tech-tag teal">Multiplayer Architecture</span>
+                        </div>
+                        <div class="project-action-links">
+                            <a href="https://github.com/yalshinnawi/voxel_3d_voidfall_dredge" target="_blank" class="project-btn secondary"><i class="fa fa-github"></i> View GitHub Repository</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="project-accordion-toggle" type="button">
+                    <span>Engine Architecture &amp; Graphics Pipeline</span>
+                    <i class="fa fa-chevron-down toggle-icon"></i>
+                </button>
+                <div class="project-accordion-content">
+                    <p>
+                        Built entirely from scratch without commercial engines, <em>Voidfall: Dredge</em> bridges low-level memory-packed voxel architectures with modern graphics pipelines and client-server multiplayer synchronization:
+                    </p>
+                    <ol>
+                        <li><strong>High-Density Voxel Memory Architecture:</strong> 32x32x32 chunk hierarchies with 16-bit packed voxel memory layout (<code>uint8_t material_id</code>, <code>uint8_t flags_and_damage</code>). Bit-packed 8-byte vertex formatting with greedy meshing and ambient occlusion.</li>
+                        <li><strong>Procedural Cavern &amp; World Generation:</strong> Multi-octave 3D Simplex noise generating deep subterranean cavern networks, radioactive hazard zones, volcanic fissures, and sealed industrial vaults.</li>
+                        <li><strong>Dynamic Physics &amp; Voxel Destruction:</strong> AABB sweep collision detection with raycasted pneumatic drill destruction, real-time debris physics, and tactical flare illumination.</li>
+                        <li><strong>Atmospheric Subterranean Rendering:</strong> Volumetric distance fog, dynamic point light attenuation, glowing crystal shaders, and tactical radar sonar scanner effects.</li>
+                        <li><strong>Full Game Loop &amp; Audio DSP:</strong> Comprehensive mission cycle (Drop Pod &rarr; Mining Extraction &rarr; Defense &rarr; Debrief) with custom audio safety limiters and positional stereo sound.</li>
+                    </ol>
+                    <div class="accordion-media-box">
+                        <img src="images/voxel_3d_montage.jpg" alt="Voidfall: Dredge 16-Phase Engine Architecture Montage" class="project-card-img">
+                        <p class="media-caption">Voidfall: Dredge — Complete 16-Phase Game Engine Pipeline &amp; Systems Montage</p>
+                    </div>
+                    <p>Source Code: <a href="https://github.com/yalshinnawi/voxel_3d_voidfall_dredge" target="_blank">github.com/yalshinnawi/voxel_3d_voidfall_dredge</a></p>
+                </div>
+            </div>
+
+            <!-- Category Divider: Systems & Academic Projects -->
+            <div class="category-divider" data-section="systems">
+                <h3>Systems, Hardware &amp; Robotics</h3>
+                <span class="divider-count">5 Projects</span>
+            </div>
+
+            <!-- 5. Secure File System -->
+            <div class="project-card" data-category="systems">
+                <div class="project-card-header">
+                    <div class="header-left">
+                        <span class="project-category-tag">Systems &amp; Security</span>
+                        <h3 class="project-title">Secure File System — Cryptographic Zero-Trust Storage</h3>
+                    </div>
+                    <span class="project-year-badge">CS161 Systems</span>
+                </div>
+                <div class="project-card-body">
+                    <div class="project-media-col">
+                        <img src="images/secure_file_system.svg" alt="Secure File System Architecture" class="project-card-img">
+                        <p class="media-caption">Cryptographic Client, Keystore, &amp; Untrusted Datastore Model</p>
+                    </div>
+                    <div class="project-info-col">
+                        <p class="project-description">
+                            Designed and implemented a client application for a secure, zero-trust cloud file sharing system in <strong>Golang</strong>. Engineered with end-to-end cryptographic integrity so that an untrusted server cannot view, decrypt, or maliciously tamper with user data even under active adversary and Man-in-the-Middle (MitM) conditions.
+                        </p>
+                        <div class="project-tech-tags">
+                            <span class="tech-tag teal">Golang</span>
+                            <span class="tech-tag blue">RSA Signatures</span>
+                            <span class="tech-tag purple">PBKDF2 / HKDF</span>
+                            <span class="tech-tag">AES-GCM Authenticated Encryption</span>
+                            <span class="tech-tag blue">HMAC Verification</span>
+                        </div>
+                        <div class="project-action-links">
+                            <a href="https://sp21.cs161.org/proj2/" target="_blank" class="project-btn outline"><i class="fa fa-external-link"></i> CS161 Project Specification</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="project-accordion-toggle" type="button">
+                    <span>Cryptographic Architecture &amp; Attack Vectors</span>
+                    <i class="fa fa-chevron-down toggle-icon"></i>
+                </button>
+                <div class="project-accordion-content">
+                    <p>
+                        The architecture is divided into four major components: the trusted Keystore, untrusted Datastore, malicious users, and user communication channels:
+                    </p>
+                    <ol>
+                        <li><strong>Trusted Keystore:</strong> An authenticated directory service storing immutable public keys and user verification records that adversaries cannot tamper with.</li>
+                        <li><strong>Untrusted Datastore:</strong> Hostile cloud storage where an adversary observes all API traffic (set/get/delete). All persisted content is encrypted using AES-GCM and verified with HMAC to detect any bit-flip or replay attacks.</li>
+                        <li><strong>MitM-Resistant File Sharing:</strong> When sharing files, an encrypted access token is sent over insecure communication channels, using digital signatures and public-key encryption to guarantee recipient validation.</li>
+                        <li><strong>Efficient Revocation &amp; Append:</strong> Re-encrypts file nodes and updates access trees upon revocation (RevokeFile) without downloading the entire dataset, maintaining efficient <code>AppendFile</code> throughput.</li>
+                    </ol>
+                    <p>Specification: <a href="https://sp21.cs161.org/proj2/" target="_blank">UC Berkeley CS161 Computer Security Project 2</a></p>
+                </div>
+            </div>
+
+            <!-- 6. CPU Design -->
+            <div class="project-card" data-category="systems">
+                <div class="project-card-header">
+                    <div class="header-left">
+                        <span class="project-category-tag">Hardware &amp; Architecture</span>
+                        <h3 class="project-title">3-Stage Pipelined RISC-V CPU on FPGA</h3>
+                    </div>
+                    <span class="project-year-badge">EECS151 Architecture</span>
+                </div>
+                <div class="project-card-body">
+                    <div class="project-media-col">
+                        <img src="images/EECS151L Final Project High-level Overview of System.png" alt="CPU High Level Architecture" class="project-card-img">
+                        <p class="media-caption">Complete CPU Datapath &amp; Memory Mapped IO Organization</p>
+                    </div>
+                    <div class="project-info-col">
+                        <p class="project-description">
+                            Designed and synthesized a 3-stage pipelined <strong>RISC-V RV32</strong> processor in <strong>Verilog</strong> targeted for a <strong>Xilinx Zynq 7000-series FPGA</strong>. Features on-chip Memory-Mapped I/O (MMIO), a full UART transceiver, BIOS execution, subtractive audio synthesizer, and custom peripheral interfaces.
+                        </p>
+                        <div class="project-tech-tags">
+                            <span class="tech-tag teal">Verilog / HDL</span>
+                            <span class="tech-tag blue">RISC-V (RV32)</span>
+                            <span class="tech-tag purple">Xilinx Zynq FPGA</span>
+                            <span class="tech-tag">3-Stage Pipeline (IF/IDEX/MEMWB)</span>
+                            <span class="tech-tag teal">UART MMIO</span>
+                        </div>
+                        <div class="project-action-links">
+                            <a href="#cpu-stages" class="project-btn outline"><i class="fa fa-microchip"></i> View Pipeline Stages</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="project-accordion-toggle" type="button" id="cpu-stages">
+                    <span>Datapath Pipeline, Critical Path &amp; Performance</span>
+                    <i class="fa fa-chevron-down toggle-icon"></i>
+                </button>
+                <div class="project-accordion-content">
+                    <p>
+                        The processor pipeline separates execution into <strong>Instruction Fetch (IF)</strong>, <strong>Instruction Decode &amp; Execute (IDEX)</strong>, and <strong>Memory Write Back (MEMWB)</strong>:
+                    </p>
+                    <div class="stages-grid">
+                        <div class="stage-card">
+                            <h4>IF Stage</h4>
+                            <img src="images/EECS151DataPath-IF Stage.jpg" alt="IF Stage Datapath">
+                        </div>
+                        <div class="stage-card">
+                            <h4>IDEX Stage</h4>
+                            <img src="images/EECS151DataPath-IDEX Stage.jpg" alt="IDEX Stage Datapath">
+                        </div>
+                        <div class="stage-card">
+                            <h4>MEMWB Stage</h4>
+                            <img src="images/EECS151DataPath-MEMWB Stage.jpg" alt="MEMWB Stage Datapath">
+                        </div>
+                    </div>
+                    <ol>
+                        <li><strong>Clock Frequency &amp; Critical Path:</strong> Achieved a synthesis clock speed of <strong>~70MHz</strong> on the Zynq-7000 FPGA. Optimized critical path delays between IDEX multiplication stages and audio PWM buffers.</li>
+                        <li><strong>Forwarding &amp; Hazard Mitigation:</strong> Implemented data forwarding logic between MEMWB and IDEX stages, maintaining an impressive CPI of <strong>~1.18</strong> on standard matrix multiplication (<code>mmult</code>) benchmarks.</li>
+                        <li><strong>FPGA Resource Footprint:</strong> Efficiently synthesized with only 2,283 Slice LUTs and 905 Slice Registers.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- 7. Yoga Pose Correction & Robotics -->
+            <div class="project-card" data-category="systems">
+                <div class="project-card-header">
+                    <div class="header-left">
+                        <span class="project-category-tag">Robotics &amp; Computer Vision</span>
+                        <h3 class="project-title">Yoga Pose Correction &amp; Motion Planning with Baxter</h3>
+                    </div>
+                    <span class="project-year-badge">EECS106A Robotics</span>
+                </div>
+                <div class="project-card-body">
+                    <div class="project-media-col">
+                        <img src="images/RoboticsCoverPic.png" alt="Baxter Robot and HumanBot Model" class="project-card-img">
+                        <p class="media-caption">Baxter Robot with HumanBot Simulation Model</p>
+                    </div>
+                    <div class="project-info-col">
+                        <p class="project-description">
+                            Autonomous robotic assistance platform utilizing a 7-DOF <strong>Rethink Robotics Baxter robot</strong> to visually identify incorrect posture and physically guide a human mannequin's arms into proper yoga alignment. Developed in <strong>ROS</strong>, <strong>Python</strong>, <strong>OpenCV</strong>, and <strong>Gazebo</strong>.
+                        </p>
+                        <div class="project-tech-tags">
+                            <span class="tech-tag teal">ROS (Robot Operating System)</span>
+                            <span class="tech-tag blue">Python / OpenCV</span>
+                            <span class="tech-tag purple">MoveIt Path Planning</span>
+                            <span class="tech-tag">ArUco 3D Pose Estimation</span>
+                            <span class="tech-tag teal">Gazebo / RViz</span>
+                        </div>
+                        <div class="project-action-links">
+                            <a href="#robotics-demo" class="project-btn outline"><i class="fa fa-play-circle"></i> Watch Video Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="project-accordion-toggle" type="button" id="robotics-demo">
+                    <span>Computer Vision, Motion Planning &amp; Demo Video</span>
+                    <i class="fa fa-chevron-down toggle-icon"></i>
+                </button>
+                <div class="project-accordion-content">
+                    <p>
+                        To enable contact-based physical adjustment, the pipeline unites monocular 3D pose estimation, kinematic transforms, and MoveIt trajectory planning:
+                    </p>
+                    <div class="accordion-two-col">
+                        <div>
+                            <img src="images/roboticsArucoTagPic.webp" alt="ArUco Tag Detection" class="project-card-img">
+                            <p class="media-caption">ArUco Tag Detection via Baxter Head Camera</p>
+                        </div>
+                        <div>
+                            <img src="images/roboticsMotionPlanning.webp" alt="MoveIt Motion Planning" class="project-card-img">
+                            <p class="media-caption">MoveIt Collision-Free Arm Trajectory Execution</p>
+                        </div>
+                    </div>
+                    <ol>
+                        <li><strong>Monocular 3D Tag Localization:</strong> Detects fiducial ArUco markers on the user's limbs from Baxter's head camera and projects them into the global coordinate frame using TF transformation buffers.</li>
+                        <li><strong>URDF Human Model:</strong> Designed a dynamic <code>urdf.xacro</code> model of the human upper torso with realistic rotational limits and resistance parameters.</li>
+                        <li><strong>Collision-Free Trajectory Planning:</strong> Employs MoveIt's sampling-based planners to avoid self-collision and calculate smooth joint velocities when repositioning arms into a T-pose.</li>
+                    </ol>
+                    <div class="video-responsive-container">
+                        <video controls style="width: 100%; height: 100%;">
+                            <source src="videos/RoboticsDemo.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <p class="media-caption">Gazebo &amp; RViz Demonstration: Monocular Detection to T-Pose Re-orientation</p>
+                </div>
+            </div>
+
+            <!-- 8. Gitlet -->
+            <div class="project-card" data-category="systems">
+                <div class="project-card-header">
+                    <div class="header-left">
+                        <span class="project-category-tag">Systems Architecture</span>
+                        <h3 class="project-title">Gitlet — Version Control System from Scratch</h3>
+                    </div>
+                    <span class="project-year-badge">CS61B Architecture</span>
+                </div>
+                <div class="project-card-body">
+                    <div class="project-media-col">
+                        <img src="images/gitletCoverPhoto.png" alt="Gitlet Version Control" class="project-card-img">
+                        <p class="media-caption">Directed Acyclic Graph (DAG) Commit Architecture</p>
+                    </div>
+                    <div class="project-info-col">
+                        <p class="project-description">
+                            A complete local version-control system modeled after <strong>Git</strong>, written from scratch in <strong>Java</strong>. Supports full commit history logs, staging and untracking files, branch creation and deletion, commit checkouts, arbitrary resets, and three-way branch merges with automated conflict resolution.
+                        </p>
+                        <div class="project-tech-tags">
+                            <span class="tech-tag teal">Java</span>
+                            <span class="tech-tag blue">SHA-1 Cryptographic Hashing</span>
+                            <span class="tech-tag purple">Graph Algorithms (DAG)</span>
+                            <span class="tech-tag">Object Serialization</span>
+                            <span class="tech-tag teal">File System I/O</span>
+                        </div>
+                        <div class="project-action-links">
+                            <a href="https://inst.eecs.berkeley.edu/~cs61b/fa19/materials/proj/proj3/" target="_blank" class="project-btn outline"><i class="fa fa-external-link"></i> CS61B Project Specification</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="project-accordion-toggle" type="button">
+                    <span>Object Storage &amp; Commit Tree Primitives</span>
+                    <i class="fa fa-chevron-down toggle-icon"></i>
+                </button>
+                <div class="project-accordion-content">
+                    <p>
+                        Gitlet mirrors Git's underlying content-addressable storage model using three primary primitives:
+                    </p>
+                    <ol>
+                        <li><strong>Blobs:</strong> Raw file contents identified uniquely by their SHA-1 checksum.</li>
+                        <li><strong>Trees &amp; Commits:</strong> Immutable snapshots combining timestamp, author, commit message, parent commit pointers, and mapped blob references.</li>
+                        <li><strong>Branch &amp; Merge Engine:</strong> Implements Lowest Common Ancestor (LCA) graph traversals to determine merge bases for three-way branch merges and automatically generate conflict markers.</li>
+                    </ol>
+                    <div class="accordion-media-box">
+                        <img src="images/gitletCommitsAndBlobs.png" alt="Gitlet Commits and Blobs Structure" class="project-card-img">
+                        <p class="media-caption">Content-Addressable Object Storage Architecture (CS61B)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 9. NumC -->
+            <div class="project-card" data-category="systems">
+                <div class="project-card-header">
+                    <div class="header-left">
+                        <span class="project-category-tag">High-Performance Computing</span>
+                        <h3 class="project-title">NumC — SIMD &amp; OpenMP Accelerated Linear Algebra</h3>
+                    </div>
+                    <span class="project-year-badge">CS61C Systems</span>
+                </div>
+                <div class="project-card-body">
+                    <div class="project-media-col">
+                        <img src="images/NumC.png" alt="NumC Accelerated Linear Algebra" class="project-card-img">
+                        <p class="media-caption">C-Optimized Matrix Accelerator &amp; Python Bindings</p>
+                    </div>
+                    <div class="project-info-col">
+                        <p class="project-description">
+                            A high-speed linear algebra library written in <strong>C</strong> with a native <strong>Python C-API</strong> bridge. Implements multidimensional matrix operations, sub-matrix slicing with memory preservation, and extreme speed optimizations utilizing <strong>Intel AVX Vector Intrinsics (SIMD)</strong>, <strong>OpenMP multi-threading</strong>, loop unrolling, and cache-blocking algorithms.
+                        </p>
+                        <div class="project-tech-tags">
+                            <span class="tech-tag teal">C</span>
+                            <span class="tech-tag blue">Python C-API</span>
+                            <span class="tech-tag purple">Intel AVX / SIMD Intrinsics</span>
+                            <span class="tech-tag">OpenMP Multiprocessing</span>
+                            <span class="tech-tag teal">Cache Blocking</span>
+                        </div>
+                        <div class="project-action-links">
+                            <a href="https://software.intel.com/sites/landingpage/IntrinsicsGuide/" target="_blank" class="project-btn outline"><i class="fa fa-external-link"></i> Intel Intrinsics Guide</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="project-accordion-toggle" type="button">
+                    <span>Performance Engineering &amp; 98x Speedup</span>
+                    <i class="fa fa-chevron-down toggle-icon"></i>
+                </button>
+                <div class="project-accordion-content">
+                    <p>
+                        Achieving performance comparable to NumPy required low-level hardware optimization and cache line alignment:
+                    </p>
+                    <ol>
+                        <li><strong>Intel AVX Vectorization:</strong> Replaced naive inner loops with 256-bit SIMD registers, loading 4 double-precision floats per vector operation.</li>
+                        <li><strong>Spatial Locality &amp; Cache Blocking:</strong> Transposed target matrices to ensure sequential memory access across cache lines, preventing cache misses.</li>
+                        <li><strong>OpenMP Parallel Loops:</strong> Parallelized the outer loops across CPU cores while unrolling inner loops to maximize instruction pipeline saturation, achieving a total <strong>98x speedup</strong> over the naive baseline.</li>
+                        <li><strong>Logarithmic Exponentiation:</strong> Optimized matrix power operations using \(O(\log n)\) divide-and-conquer exponentiation with reusable buffer allocation.</li>
+                    </ol>
+                </div>
+            </div>
+
+        </div> <!-- end .projects-wrapper -->
+    </section>
+
+    <!-- ==============================================
+         FOOTER (Exact match with index.html)
+         ============================================== -->
+    <footer>
+        <div class="row">
+            <div class="twelve columns">
+                <ul class="social-links">
+                    <li><a href="https://www.linkedin.com/in/yousef-alshinnawi/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="https://github.com/yalshinnawi" target="_blank"><i class="fa fa-github"></i></a></li>
+                </ul>
+            </div>
+            <div id="go-top">
+                <a class="smoothscroll" title="Back to Top" href="#projects-hero"><i class="icon-up-open"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
     <script src="js/waypoints.js"></script>
     <script src="js/magnific-popup.js"></script>
     <script src="js/initProjects.js"></script>
-
-
-    <script>
-        // Get the modal
-        var modal = document.getElementById("myModal");
-        var idexModal = document.getElementById("IDEXModal");
-        var memwbModal = document.getElementById("MEMWBModal");
-
-        // Get the button that opens the modal
-        var btn = document.getElementById("myBtn");
-        var idexBtn = document.getElementById("idexBtn");
-        var memwbBtn = document.getElementById("memwbBtn");
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("IFClose")[0];
-        var idexSpan = document.getElementsByClassName("IDEXClose")[0];
-        var memwbSpan = document.getElementsByClassName("MEMWBClose")[0];
-
-        // When the user clicks the button, open the modal 
-        btn.onclick = function () {
-            modal.style.display = "block";
-        }
-        idexBtn.onclick = function () {
-            idexModal.style.display = "block";
-        }
-        memwbBtn.onclick = function () {
-            memwbModal.style.display = "block";
-        }
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function () {
-            modal.style.display = "none";
-        }
-        idexSpan.onclick = function() {
-            idexModal.style.display = "none";
-        }
-        memwbSpan.onclick = function () {
-            memwbModal.style.display = "none";
-        }
-
-    </script>
 </body>
 </html>

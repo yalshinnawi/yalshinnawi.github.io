@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141923" />
+      <stop offset="100%" stop-color="#1f2937" />
+    </linearGradient>
+    <linearGradient id="boxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0ea5e9" />
+      <stop offset="100%" stop-color="#11abb0" />
+    </linearGradient>
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#f06000" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="480" rx="12" fill="url(#bgGrad)" stroke="#334155" stroke-width="2"/>
+  
+  <!-- Subtle Grid Pattern -->
+  <g opacity="0.08" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="80" x2="800" y2="80" />
+    <line x1="0" y1="160" x2="800" y2="160" />
+    <line x1="0" y1="240" x2="800" y2="240" />
+    <line x1="0" y1="320" x2="800" y2="320" />
+    <line x1="0" y1="400" x2="800" y2="400" />
+    <line x1="160" y1="0" x2="160" y2="480" />
+    <line x1="320" y1="0" x2="320" y2="480" />
+    <line x1="480" y1="0" x2="480" y2="480" />
+    <line x1="640" y1="0" x2="640" y2="480" />
+  </g>
+
+  <!-- Title Badge -->
+  <rect x="40" y="30" width="340" height="34" rx="6" fill="#11abb0" fill-opacity="0.15" stroke="#11abb0" stroke-width="1"/>
+  <text x="55" y="52" fill="#38bdf8" font-family="'Open Sans', sans-serif" font-size="13" font-weight="bold" letter-spacing="1">ZERO-KNOWLEDGE FILE SHARING SYSTEM</text>
+
+  <text x="760" y="52" text-anchor="end" fill="#94a3b8" font-family="'Open Sans', sans-serif" font-size="12">CS161 Cryptographic Architecture</text>
+
+  <!-- Client Application Box -->
+  <g transform="translate(50, 110)">
+    <rect width="250" height="310" rx="10" fill="url(#boxGrad)" stroke="#38bdf8" stroke-width="1.5" />
+    <rect x="0" y="0" width="250" height="42" rx="10" fill="#0369a1" fill-opacity="0.3" />
+    <circle cx="24" cy="21" r="7" fill="#38bdf8" />
+    <text x="42" y="26" fill="#ffffff" font-family="'Open Sans', sans-serif" font-size="14" font-weight="bold">Client Application (Go)</text>
+    
+    <!-- Client Details -->
+    <text x="20" y="75" fill="#94a3b8" font-family="'Open Sans', sans-serif" font-size="11" font-weight="bold" letter-spacing="0.5">LOCAL CRYPTOGRAPHIC ENGINE</text>
+    
+    <rect x="20" y="90" width="210" height="32" rx="4" fill="#1e293b" stroke="#334155" />
+    <text x="32" y="111" fill="#cbd5e1" font-family="'Courier New', monospace" font-size="12">PBKDF2 Key Derivation</text>
+
+    <rect x="20" y="132" width="210" height="32" rx="4" fill="#1e293b" stroke="#334155" />
+    <text x="32" y="153" fill="#cbd5e1" font-family="'Courier New', monospace" font-size="12">HKDF Stream Derivations</text>
+
+    <rect x="20" y="174" width="210" height="32" rx="4" fill="#1e293b" stroke="#334155" />
+    <text x="32" y="195" fill="#cbd5e1" font-family="'Courier New', monospace" font-size="12">AES-256-GCM Encryption</text>
+
+    <rect x="20" y="216" width="210" height="32" rx="4" fill="#1e293b" stroke="#334155" />
+    <text x="32" y="237" fill="#cbd5e1" font-family="'Courier New', monospace" font-size="12">HMAC-SHA256 Integrity</text>
+
+    <rect x="20" y="258" width="210" height="32" rx="4" fill="#1e293b" stroke="#334155" />
+    <text x="32" y="279" fill="#cbd5e1" font-family="'Courier New', monospace" font-size="12">RSA Digital Signatures</text>
+  </g>
+
+  <!-- Connectors -->
+  <!-- Top Connector to Keystore -->
+  <path d="M 300 200 L 490 170" fill="none" stroke="#11abb0" stroke-width="2" stroke-dasharray="6,4" />
+  <polygon points="492,170 482,165 484,175" fill="#11abb0" />
+
+  <!-- Bottom Connector to Datastore -->
+  <path d="M 300 320 L 490 350" fill="none" stroke="#f06000" stroke-width="2" stroke-dasharray="6,4" />
+  <polygon points="492,350 484,345 482,355" fill="#f06000" />
+
+  <!-- Middle Shield / Tunnel Tag -->
+  <g transform="translate(355, 235)">
+    <rect x="-45" y="-18" width="90" height="36" rx="18" fill="#0f172a" stroke="#11abb0" stroke-width="1.5" />
+    <text x="0" y="5" text-anchor="middle" fill="#38bdf8" font-family="'Open Sans', sans-serif" font-size="11" font-weight="bold">SECURE TLS</text>
+  </g>
+
+  <!-- Keystore Box (Trusted) -->
+  <g transform="translate(500, 110)">
+    <rect width="250" height="135" rx="10" fill="url(#boxGrad)" stroke="#11abb0" stroke-width="1.5" />
+    <rect x="0" y="0" width="250" height="38" rx="10" fill="#0f766e" fill-opacity="0.3" />
+    <circle cx="22" cy="19" r="6" fill="#10b981" />
+    <text x="38" y="24" fill="#ffffff" font-family="'Open Sans', sans-serif" font-size="13" font-weight="bold">Trusted Keystore</text>
+    <text x="235" y="24" text-anchor="end" fill="#10b981" font-family="'Open Sans', sans-serif" font-size="10" font-weight="bold">AUTHENTICATED</text>
+
+    <text x="20" y="65" fill="#94a3b8" font-family="'Open Sans', sans-serif" font-size="12">• Public Keys Directory</text>
+    <text x="20" y="90" fill="#94a3b8" font-family="'Open Sans', sans-serif" font-size="12">• Immutable RSA User Certificates</text>
+    <text x="20" y="115" fill="#94a3b8" font-family="'Open Sans', sans-serif" font-size="12">• Tamper-Proof Verification State</text>
+  </g>
+
+  <!-- Datastore Box (Untrusted) -->
+  <g transform="translate(500, 275)">
+    <rect width="250" height="145" rx="10" fill="url(#boxGrad)" stroke="#f06000" stroke-width="1.5" />
+    <rect x="0" y="0" width="250" height="38" rx="10" fill="#c2410c" fill-opacity="0.3" />
+    <circle cx="22" cy="19" r="6" fill="#ef4444" />
+    <text x="38" y="24" fill="#ffffff" font-family="'Open Sans', sans-serif" font-size="13" font-weight="bold">Untrusted Datastore</text>
+    <text x="235" y="24" text-anchor="end" fill="#f87171" font-family="'Open Sans', sans-serif" font-size="10" font-weight="bold">ADVERSARY CONTROL</text>
+
+    <text x="20" y="65" fill="#94a3b8" font-family="'Open Sans', sans-serif" font-size="12">• Zero-Knowledge Ciphertext Blobs</text>
+    <text x="20" y="90" fill="#94a3b8" font-family="'Open Sans', sans-serif" font-size="12">• HMAC-Protected Merkle Appends</text>
+    <text x="20" y="115" fill="#94a3b8" font-family="'Open Sans', sans-serif" font-size="12">• Revocation &amp; Re-encryption Trees</text>
+  </g>
+</svg>

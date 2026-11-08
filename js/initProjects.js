@@ -1,141 +1,122 @@
 /*-----------------------------------------------------------------------------------
 /*
-/* Init JS
+/* Init Projects JS
+/* Yousef Al-Shinnawi Portfolio
 /*
 -----------------------------------------------------------------------------------*/
 
- jQuery(document).ready(function($) {
+jQuery(document).ready(function($) {
 
-/*----------------------------------------------------*/
-/* FitText Settings
------------------------------------------------------- */
-
+   /*----------------------------------------------------*/
+   /* FitText Settings
+   ------------------------------------------------------ */
    if ($.fn.fitText) {
        setTimeout(function() {
-          $('h1.responsive-headline').fitText(1, { minFontSize: '40px', maxFontSize: '90px' });
+          $('h1.responsive-headline').fitText(1, { minFontSize: '36px', maxFontSize: '80px' });
        }, 100);
    }
 
+   /*----------------------------------------------------*/
+   /* Smooth Scrolling
+   ------------------------------------------------------ */
+   $('.smoothscroll').on('click', function (e) {
+       e.preventDefault();
 
-/*----------------------------------------------------*/
-/* Smooth Scrolling
------------------------------------------------------- */
+       var target = this.hash;
+       var $target = $(target);
 
-   $('.smoothscroll').on('click',function (e) {
-	    e.preventDefault();
-
-	    var target = this.hash,
-	    $target = $(target);
-
-	    $('html, body').stop().animate({
-	        'scrollTop': $target.offset().top
-	    }, 800, 'swing', function () {
-	        window.location.hash = target;
-	    });
-	});
-
-
-/*----------------------------------------------------*/
-/* Highlight the current section in the navigation bar
-------------------------------------------------------*/
-
-	var sections = $("section");
-	var navigation_links = $("#nav-wrap a");
-
-	sections.waypoint({
-
-      handler: function(event, direction) {
-
-		   var active_section;
-
-			active_section = $(this);
-			if (direction === "up") active_section = active_section.prev();
-
-			var active_link = $('#nav-wrap a[href="#' + active_section.attr("id") + '"]');
-
-         navigation_links.parent().removeClass("current");
-			active_link.parent().addClass("current");
-
-		},
-		offset: '35%'
-
-	});
-
-
-// /*----------------------------------------------------*/
-// /*	Make sure that #header-background-image height is
-// /* equal to the browser height.
-// ------------------------------------------------------ */
-
-//    $('header').css({ 'height': $(window).height() });
-//    $(window).on('resize', function() {
-
-//         $('header').css({ 'height': $(window).height() });
-//         $('body').css({ 'width': $(window).width() })
-//    });
-
-
-/*----------------------------------------------------*/
-/*	Fade In/Out Primary Navigation
-------------------------------------------------------*/
-
-   $(window).on('scroll', function() {
-      var y = $(window).scrollTop();
-      var nav = $('#nav-wrap');
-
-      if (y > 20) {
-         nav.addClass('opaque');
-      } else {
-         nav.removeClass('opaque');
-      }
+       if ($target.length) {
+           $('html, body').stop().animate({
+               'scrollTop': $target.offset().top
+           }, 800, 'swing', function () {
+               window.location.hash = target;
+           });
+       }
    });
 
-
-/*----------------------------------------------------*/
-/*	Modal Popup
-------------------------------------------------------*/
-
-   if ($.fn.magnificPopup) {
-       $('.item-wrap a').magnificPopup({
-          type:'inline',
-          fixedContentPos: false,
-          removalDelay: 200,
-          showCloseBtn: false,
-          mainClass: 'mfp-fade'
-       });
-
-       $(document).on('click', '.popup-modal-dismiss', function (e) {
-       		e.preventDefault();
-       		$.magnificPopup.close();
-       });
+   /*----------------------------------------------------*/
+   /* Dynamic Hero Height
+   ------------------------------------------------------ */
+   function setHeroHeight() {
+       var winH = $(window).height();
+       $('#projects-hero').css({ 'height': winH });
    }
+   setHeroHeight();
+   $(window).on('resize', setHeroHeight);
 
+   /*----------------------------------------------------*/
+   /* Navbar Fade In/Out on Scroll
+   ------------------------------------------------------ */
+   $(window).on('scroll', function() {
+       var h = $('#projects-hero').height() || 600;
+       var y = $(window).scrollTop();
+       var nav = $('#nav-wrap');
 
-/*----------------------------------------------------*/
-/*	Flexslider
-/*----------------------------------------------------*/
-   if ($.fn.flexslider) {
-       $('.flexslider').flexslider({
-          namespace: "flex-",
-          controlsContainer: ".flex-container",
-          animation: 'slide',
-          controlNav: true,
-          directionNav: false,
-          smoothHeight: true,
-          slideshowSpeed: 7000,
-          animationSpeed: 600,
-          randomize: false,
-       });
-   }
+       if ((y > h * 0.20) && (y < h) && ($(window).outerWidth() > 768)) {
+           nav.fadeOut('fast');
+       } else {
+           if (y < h * 0.20) {
+               nav.removeClass('opaque').fadeIn('fast');
+           } else {
+               nav.addClass('opaque').fadeIn('fast');
+           }
+       }
+   });
 
+   /*----------------------------------------------------*/
+   /* Filter Buttons (All, Web, Game Dev, Systems)
+   ------------------------------------------------------ */
+   $('.filter-btn').on('click', function() {
+       var filter = $(this).attr('data-filter');
 
+       $('.filter-btn').removeClass('active');
+       $(this).addClass('active');
+
+       if (filter === 'all') {
+           $('.category-divider').fadeIn(250);
+           $('.project-card').fadeIn(250);
+       } else {
+           $('.category-divider').hide();
+           $('.project-card').each(function() {
+               var cat = $(this).attr('data-category');
+               if (cat === filter) {
+                   $(this).fadeIn(250);
+               } else {
+                   $(this).hide();
+               }
+           });
+       }
+   });
+
+   /*----------------------------------------------------*/
+   /* Accordion Expand / Collapse
+   ------------------------------------------------------ */
+   $('.project-accordion-toggle').on('click', function(e) {
+       e.preventDefault();
+       var $btn = $(this);
+       var $content = $btn.next('.project-accordion-content');
+
+       $btn.toggleClass('active');
+       $content.stop().slideToggle(300);
+   });
+
+   /*----------------------------------------------------*/
+   /* Deep-linking for internal anchor buttons
+   ------------------------------------------------------ */
+   $('a[href^="#"]').not('.smoothscroll').on('click', function(e) {
+       var target = this.hash;
+       if (!target || target === '#') return;
+
+       var $target = $(target);
+       if ($target.length && $target.hasClass('project-accordion-toggle')) {
+           e.preventDefault();
+           if (!$target.hasClass('active')) {
+               $target.trigger('click');
+           }
+           $('html, body').stop().animate({
+               'scrollTop': $target.offset().top - 80
+           }, 600);
+       }
+   });
 
 });
-
-
-
-
-
-
-
-
